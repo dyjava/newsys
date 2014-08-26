@@ -13,14 +13,12 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-import com.sys.applet.main.AccountTree;
-import com.sys.applet.main.DiaryTree;
-import com.sys.applet.main.IncomeTree;
-import com.sys.applet.main.KindTree;
-import com.sys.applet.main.PhotoTree;
-import com.sys.applet.main.UserTree;
-import com.sys.applet.main.UserRank;
 import com.sys.applet.main.WellcomeFrame;
+import com.sys.applet.main.account.AccountTree;
+import com.sys.applet.main.diary.DiaryTree;
+import com.sys.applet.main.income.IncomeTree;
+import com.sys.applet.main.kind.KindTree;
+import com.sys.applet.main.user.UserTree;
 
 /** 
  * 登陆后主页面
@@ -82,11 +80,6 @@ public class MainFrame extends JFrame{
     	diary_button.setForeground(Color.blue);
     	diary_button.setText("个人日记");
     	diary_button.addMouseListener(new DiaryMouseAdapter());
-
-    	photo_button.setBackground(Color.white);
-    	photo_button.setForeground(Color.blue);
-    	photo_button.setText("相册集");
-    	photo_button.addMouseListener(new PhotoMouseAdapter());
     	
     	user_button.setBackground(Color.white);
     	user_button.setForeground(Color.blue);
@@ -104,27 +97,27 @@ public class MainFrame extends JFrame{
     	String slip = "--" ;
     	
 //    	部署按钮
-    	UserRank rank = ConstService.rank ;
-    	if(rank.accunt=='1'){
+//    	UserRank rank = ConstService.rank ;
+//    	if(rank.accunt=='1'){
     		topF.add(acc_button);
     		topF.add(new JLabel(slip)) ;
-    	}
-    	if(rank.income=='1'){
+//    	}
+//    	if(rank.income=='1'){
     		topF.add(in_button) ;
     		topF.add(new JLabel(slip)) ;
-    	}
-    	if(rank.diary=='1'){
+//    	}
+//    	if(rank.diary=='1'){
         	topF.add(diary_button);
     		topF.add(new JLabel(slip)) ;
-    	}
-    	if(rank.diary=='1'){
+//    	}
+//    	if(rank.diary=='1'){
         	topF.add(photo_button);
     		topF.add(new JLabel(slip)) ;
-    	}
-    	if(rank.kind=='1'){
+//    	}
+//    	if(rank.kind=='1'){
     		topF.add(kind_button);
     		topF.add(new JLabel(slip)) ;
-    	}
+//    	}
     	topF.add(user_button);
 		topF.add(new JLabel(slip)) ;
 //    	topF.add(userOut) ;
@@ -153,11 +146,6 @@ public class MainFrame extends JFrame{
     private void diaryMouseReleased(MouseEvent e){
     	mainF.removeAll() ;
     	mainF.add(new DiaryTree()) ;
-    	mainF.validate() ;
-    }
-    private void photoMouseReleased(MouseEvent e){
-    	mainF.removeAll() ;
-    	mainF.add(new PhotoTree()) ;
     	mainF.validate() ;
     }
     private void userMouseReleased(MouseEvent e){
@@ -191,11 +179,6 @@ public class MainFrame extends JFrame{
     class DiaryMouseAdapter extends MouseAdapter{
     	public void mouseReleased(MouseEvent e) {
     		diaryMouseReleased(e);
-        }
-    }
-    class PhotoMouseAdapter extends MouseAdapter{
-    	public void mouseReleased(MouseEvent e) {
-    		photoMouseReleased(e);
         }
     }
     class UserMouseAdapter extends MouseAdapter{

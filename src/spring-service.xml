@@ -22,27 +22,27 @@
 	</bean>
 	 -->
 	 
-	<!-- 
+	<!--  -->
 	<bean id="accountService"
-		class="com.sys.spring.service.account.impl.AccountServiceImpl">
+		class="com.sys.spring.account.service.AccountServiceImpl">
 		<property name="accountDao" ref="accountDao" />
 	</bean>
 	
 	<bean id="incomeService"
-		class="com.sys.spring.service.account.impl.IncomeServiceImpl">
+		class="com.sys.spring.account.service.IncomeServiceImpl">
 		<property name="incomeDao" ref="incomeDao" />
 	</bean>
 	
 	<bean id="diaryService"
-		class="com.sys.spring.service.account.impl.DiaryServiceImpl">
+		class="com.sys.spring.account.service.DiaryServiceImpl">
 		<property name="diaryDao" ref="diaryDao" />
 	</bean>
 	
 	<bean id="kindService"
-		class="com.sys.spring.service.account.impl.KindServiceImpl">
+		class="com.sys.spring.account.service.KindServiceImpl">
 		<property name="kindDao" ref="kindDao" />
 	</bean>
-	 -->
+	
 	
 	<!-- 用户信息服务  -->
 	<bean id="userService" class="com.sys.spring.user.service.UserServiceImpl">

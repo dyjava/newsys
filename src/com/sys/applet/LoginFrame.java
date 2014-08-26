@@ -21,8 +21,8 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-import com.borland.jbcl.layout.XYConstraints;
-import com.borland.jbcl.layout.XYLayout;
+import com.sys.applet.util.XYConstraints;
+import com.sys.applet.util.XYLayout;
 import com.sys.spring.user.domain.User;
 
 /**
