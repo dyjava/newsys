@@ -24,17 +24,14 @@ public class UpdateUserPanel extends CommonPanel{
     JTextField nameText = new JTextField();
     JTextField userNameText = new JTextField();
     JPasswordField passwordText = new JPasswordField();
-    JTextField roleText = new JTextField();
-    JTextField rankText = new JTextField();
-//    button
-    JButton runBut = new JButton();
-    JButton reBackBut = new JButton();
+//    JTextField roleText = new JTextField();
+//    JTextField rankText = new JTextField();
     
     User user ;
     String type ="update";
-    public UpdateUserPanel(int uid,String type) {
+    public UpdateUserPanel(int id,String type) {
     	this.type = type ;
-        user = ConstService.userService.getUserById(uid) ;
+        user = ConstService.userService.getUserById(id) ;
         
 //       标签
         labList.add(new JLabel("用户名:"+user.getUsername())) ;
@@ -47,19 +44,20 @@ public class UpdateUserPanel extends CommonPanel{
             fieldList.add(passwordText) ;
     	} else {
 	        labList.add(new JLabel("姓名")) ;
-	        labList.add(new JLabel("Role")) ;
-	        labList.add(new JLabel("Rank")) ;
+//	        labList.add(new JLabel("Role")) ;
+//	        labList.add(new JLabel("Rank")) ;
 	        
 	        nameText.setText(user.getName()) ;
 //	        roleText.setText(user.getRole()) ;
-	        rankText.setText(user.getRank()) ;
+//	        rankText.setText(user.getRank()) ;
 	        
 	        fieldList.add(nameText) ;
-	        fieldList.add(roleText) ;
-	        fieldList.add(rankText) ;
+//	        fieldList.add(roleText) ;
+//	        fieldList.add(rankText) ;
     	}
         
-//        按钮
+//        按钮      button
+        JButton runBut = new JButton();
         runBut.setText("提交");
         runBut.addActionListener(new RunButtonActionAdapter());
         buttonList.add(runBut) ;
@@ -70,25 +68,26 @@ public class UpdateUserPanel extends CommonPanel{
     	String message = "" ;
     	String name = nameText.getText().trim() ;
     	String pwd = passwordText.getText().trim() ;
-    	String role = roleText.getText().trim() ;
-    	String rank = rankText.getText().trim() ;
+//    	String role = roleText.getText().trim() ;
+//    	String rank = rankText.getText().trim() ;
     	
     	if(type.equals("pwd")){
     		if(pwd.length()>=3){
     			User u = new User() ;
-    			u.setUid(user.getUid()) ;
+    			u.setId(user.getId());
+//    			u.setUid(user.getUid()) ;
     			u.setPassword(pwd) ;
     			ConstService.userService.userUpdate(u) ;
     		} else {
     			message = "密码长度至少要3位。" ;
     		}
     	} else {
-	    	user.setName(name) ;
-//	    	user.setUsername(username) ;
-	    	user.setPassword(null) ;
-//	    	user.setRole(role) ;
-	    	user.setRank(rank) ;
-			int re = ConstService.userService.userUpdate(user) ;
+    		User u = new User() ;
+			u.setId(user.getId());
+//			u.setUid(user.getUid()) ;
+	    	u.setName(name) ;
+//	    	u.setRank(rank) ;
+			ConstService.userService.userUpdate(u) ;
 			
     	}
     	if(message.length()>0){

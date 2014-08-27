@@ -118,6 +118,10 @@ public class UserDaoImpl extends AbstractDBDao implements UserDao {
 			sqlStr.append(" name=?,") ;
 			params.add(user.getName()) ;
 		}
+		if(user.getPassword()!=null){
+			sqlStr.append(" PASSWORD=?,") ;
+			params.add(user.getPassword()) ;
+		}
 		if(user.getEmail()!=null){
 			sqlStr.append(" email=?,") ;
 			params.add(user.getEmail()) ;

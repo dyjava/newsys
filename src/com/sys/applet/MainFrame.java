@@ -40,7 +40,7 @@ public class MainFrame extends JFrame{
     JButton in_button = new JButton();
     JButton kind_button = new JButton();
     JButton diary_button = new JButton();
-    JButton photo_button = new JButton();
+//    JButton photo_button = new JButton();
     JButton user_button = new JButton();
     JButton out_button = new JButton();
 
@@ -111,8 +111,8 @@ public class MainFrame extends JFrame{
     		topF.add(new JLabel(slip)) ;
 //    	}
 //    	if(rank.diary=='1'){
-        	topF.add(photo_button);
-    		topF.add(new JLabel(slip)) ;
+//        	topF.add(photo_button);
+//    		topF.add(new JLabel(slip)) ;
 //    	}
 //    	if(rank.kind=='1'){
     		topF.add(kind_button);

@@ -35,9 +35,9 @@ public class UserServiceImpl implements UserService {
 	/**
 	 * 删除一条用户信息
 	 */
-	public boolean userDelete(int uid) {
+	public boolean userDelete(int id) {
 		// TODO Auto-generated method stub
-		return dao.deleteUserByID(uid)==0 ;
+		return dao.deleteUserByID(id)==0 ;
 	}
 
 	/**

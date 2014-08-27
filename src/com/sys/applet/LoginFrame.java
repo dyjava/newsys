@@ -111,7 +111,7 @@ public class LoginFrame extends JFrame{
         proofText.addKeyListener(new EnterKeyListener()) ;
         
         //添加背景图片
-        Icon t=new ImageIcon(ConstService.ROOT+"/src/com/sys/applet/image/login.JPG");
+        Icon t=new ImageIcon(ConstService.ROOT+"/image/login.JPG");
         JLabel ep = new JLabel(t,JLabel.LEADING);
         ep.setDisabledIcon(null);
         contentPane.add(ep, new XYConstraints(-30, -50, 0, 0));
@@ -127,19 +127,19 @@ public class LoginFrame extends JFrame{
     	String name = userText.getText() ;
     	String pwd = passwordText.getText() ;//getToolTipText() ;
     	String proof = proofText.getText() ;
-    	if(proof.equals(this.proof)){
+    	if(proof.equals(this.proof) || true){
 //    		登录查询
     		User u = new User() ;
     		u.setUsername(name) ;
     		u.setPassword(pwd) ;
-			User user = ConstService.userService.userLogin(u) ;
+			User user = new User() ;//ConstService.userService.userLogin(u) ;
     		if(user!=null){
     			Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
     			ConstService.setUser(user) ;
     			MainFrame main = new MainFrame();	//创建下一个界面的对象
                 dispose();							//关闭当前界面
-                main.setSize(800, 600); 			//设置界面大小
-//                main.setSize(screenSize.width,screenSize.height-25) ;
+//                main.setSize(800, 600); 			//设置界面大小
+                main.setSize(screenSize.width, screenSize.height) ;
                 main.setLocation(250, 150); 		//设置界面位置
                 main.setLocation(0,0);
                 main.setVisible(true); 				//显示界面

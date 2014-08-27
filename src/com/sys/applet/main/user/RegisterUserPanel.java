@@ -5,7 +5,6 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
@@ -17,28 +16,29 @@ import com.sys.spring.user.domain.User;
  * by dyong 2010-9-1
  */
 public class RegisterUserPanel extends CommonPanel{
-	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7526622175059738878L;
 //    text
     JTextField nameText = new JTextField();
     JTextField userNameText = new JTextField();
     JPasswordField passwordText = new JPasswordField();
     
-//    button
-    JButton runBut = new JButton();
-    JButton reBackBut = new JButton();
-    
     public RegisterUserPanel() {
 
 //       标签
-        labList.add(new JLabel("Name:")) ;
-        labList.add(new JLabel("UserName:")) ;
-        labList.add(new JLabel("Password:")) ;
-        
-        fieldList.add(nameText) ;
+        labList.add(new JLabel("登录名:")) ;
+        labList.add(new JLabel("真实姓名:")) ;
+        labList.add(new JLabel("密码:")) ;
+
         fieldList.add(userNameText) ;
+        fieldList.add(nameText) ;
         fieldList.add(passwordText) ;
         
-//        按钮
+//        按钮      button
+        JButton runBut = new JButton();
+        JButton reBackBut = new JButton();
         runBut.setText("提交");
         runBut.addActionListener(new RunButtonActionAdapter());
         buttonList.add(runBut) ;
@@ -67,7 +67,7 @@ public class RegisterUserPanel extends CommonPanel{
 	    	user.setName(name) ;
 	    	user.setUsername(username) ;
 	    	user.setPassword(pwd) ;
-			int re = ConstService.userService.userRegister(user) ;
+			ConstService.userService.userRegister(user) ;
 			
     		message = "注册成功" ;
     		clear() ;

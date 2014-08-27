@@ -10,6 +10,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import com.sys.applet.ConstService;
 import com.sys.applet.util.XYConstraints;
 
 /** 
@@ -47,7 +48,7 @@ public class WellcomeFrame extends JPanel {
         this.add(jLabel4);
         
       //添加背景图片
-        Icon t=new ImageIcon("./src/com/sys/applet/image/002.JPG");
+        Icon t=new ImageIcon(ConstService.ROOT+"/image/wellcome.JPG");
         JLabel ep = new JLabel(t,JLabel.CENTER);
 //        ep.setBounds(new Rectangle(0, 0, 800, 600));
         ep.setBounds(new Rectangle(0, 0, t.getIconWidth(), t.getIconHeight()));

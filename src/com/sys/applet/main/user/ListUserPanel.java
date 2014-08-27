@@ -32,20 +32,20 @@ public class ListUserPanel extends CommonPanel{
 //	table
     List<List<Object>> data = new ArrayList<List<Object>>() ;
     
-//	button
-    JButton submitButton = new JButton();
-    JButton reSetButton = new JButton();
-    
     public ListUserPanel() {
     	List<String> title = new ArrayList<String>() ;
     	title.add("ID") ;
     	title.add("姓名") ;
     	title.add("用户名") ;
     	title.add("权限") ;
-    	title.add("角色") ;
+//    	title.add("角色") ;
     	title.add("修改密码") ;
         table = TableFactory.createtable(title, data) ;
         table.addMouseListener(new TableMouseListener()) ;
+
+//    	button
+        JButton submitButton = new JButton();
+        JButton reSetButton = new JButton();
         
         submitButton.setText("确定");
         submitButton.addActionListener(new SubmitActionAdapter());
@@ -121,7 +121,7 @@ public class ListUserPanel extends CommonPanel{
     			JTable table = (JTable)e.getSource() ;
     			int row = table.getSelectedRow() ;
     			int col = table.getSelectedColumn() ;
-    			int uid = Integer.parseInt(data.get(row).get(0).toString()) ;
+    			int id = Integer.parseInt(data.get(row).get(0).toString()) ;
 //    			System.out.println("Doublc Clicked!"+row+"/"+uid);
     			
 //    			进入详细页面
@@ -129,7 +129,7 @@ public class ListUserPanel extends CommonPanel{
     			if(col==5){
     				type = "pwd" ;
     			}
-    			updatePanel(uid,type) ;
+    			updatePanel(id,type) ;
     		}
     	}
 	}
