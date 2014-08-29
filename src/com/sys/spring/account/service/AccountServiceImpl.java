@@ -8,7 +8,7 @@ import com.sys.spring.account.dao.AccountDao;
 import com.sys.spring.account.domain.Account;
 import com.sys.spring.account.domain.AccountTable;
 import com.sys.spring.user.domain.User;
-import com.sys.util.LogUtil;
+import com.sys.util.Logs;
 
 
 /** 
@@ -36,7 +36,7 @@ public class AccountServiceImpl implements AccountService {
 	public List<Account> findAccountList(String begin, String end,
 			Account account,User user) {
 		// TODO Auto-generated method stub
-		LogUtil.logInfo(user.getUsername(), "findAccountList", begin+","+end+","+account.toString()) ;
+		Logs.logInfo(user.getUsername(), "findAccountList", begin+","+end+","+account.toString()) ;
 		return accountDao.findAccountList(begin, end, account);
 	}
 
@@ -45,20 +45,20 @@ public class AccountServiceImpl implements AccountService {
 		account.setUid(UUID.randomUUID().toString()) ;
 		account.setUserId(user.getUid()) ;
 		account.setUsername(user.getUsername()) ;
-		LogUtil.logInfo(user.getUsername(), "insertAccount", account.toString()) ;
+		Logs.logInfo(user.getUsername(), "insertAccount", account.toString()) ;
 		return accountDao.insertAccount(account);
 	}
 
 	public int updateAccount(Account account,User user) {
 		// TODO Auto-generated method stub
-		LogUtil.logInfo(user.getUsername(), "updateAccount", account.toString()) ;
+		Logs.logInfo(user.getUsername(), "updateAccount", account.toString()) ;
 		return accountDao.updateAccount(account);
 	}
 
 	public List<AccountTable> findAccountTableList(String begin, String end,
 			Account account, User user,String type) {
 		// TODO Auto-generated method stub
-		LogUtil.logInfo(user.getUsername(), "findAccountTableList", begin+","+end+","+account.toString()) ;
+		Logs.logInfo(user.getUsername(), "findAccountTableList", begin+","+end+","+account.toString()) ;
 		return accountDao.findAccountTableList(begin, end, account, user,type);
 	}
 

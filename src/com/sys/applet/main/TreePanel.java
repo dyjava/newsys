@@ -28,7 +28,6 @@ public abstract class TreePanel extends JPanel {
 	private BorderLayout borderLayout1 = new BorderLayout();
 	private JPanel listF = new JPanel();
 	private JPanel mainF = new JPanel();
-	private XYLayout xYLayout1 = new XYLayout();
 	
 	public ArrayList<JButton> buttonList = new ArrayList<JButton>();
 	
@@ -36,7 +35,7 @@ public abstract class TreePanel extends JPanel {
 		this.setLayout(borderLayout1);
 	    listF.setBackground(Color.pink);
 	    listF.setPreferredSize(new Dimension(80, 10));
-	    listF.setLayout(xYLayout1);
+	    listF.setLayout(new XYLayout());
 	    
 	    this.add(listF, java.awt.BorderLayout.WEST);
 	    this.add(mainF, java.awt.BorderLayout.CENTER);
@@ -57,7 +56,7 @@ public abstract class TreePanel extends JPanel {
 		
 
 //	    列表树添加背景图片
-	    Icon t=new ImageIcon(ConstService.ROOT+"/src/com/sys/applet/image/003.JPG");
+	    Icon t=new ImageIcon(ConstService.ROOT+"/image/leftTree.JPG");
         JLabel ep = new JLabel(t,JLabel.CENTER);
         ep.setBounds(new Rectangle(0, 0, 80, 600));
         listF.add(ep, new XYConstraints(-100, 0, 0, 0));

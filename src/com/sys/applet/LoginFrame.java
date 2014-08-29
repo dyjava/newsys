@@ -24,6 +24,7 @@ import javax.swing.JTextField;
 import com.sys.applet.util.XYConstraints;
 import com.sys.applet.util.XYLayout;
 import com.sys.spring.user.domain.User;
+import com.sys.util.Logs;
 
 /**
  * 登陆页面
@@ -123,10 +124,15 @@ public class LoginFrame extends JFrame{
     }
 //    登陆方法
     public void runBut_actionPerformed(ActionEvent e) {
+    	StringBuffer buf = new StringBuffer("LoginFrame|runBut_actionPerformed") ;
+    	long start = System.currentTimeMillis() ;
+    	
     	String message = "" ;
     	String name = userText.getText() ;
     	String pwd = passwordText.getText() ;//getToolTipText() ;
     	String proof = proofText.getText() ;
+    	buf.append("|").append(name).append(",").append(pwd).append(",").append(proof) ;
+    	
     	if(proof.equals(this.proof) || true){
 //    		登录查询
     		User u = new User() ;
@@ -139,11 +145,14 @@ public class LoginFrame extends JFrame{
     			MainFrame main = new MainFrame();	//创建下一个界面的对象
                 dispose();							//关闭当前界面
 //                main.setSize(800, 600); 			//设置界面大小
-                main.setSize(screenSize.width, screenSize.height) ;
+                main.setSize(screenSize.width/2, screenSize.height/2) ;
                 main.setLocation(250, 150); 		//设置界面位置
                 main.setLocation(0,0);
                 main.setVisible(true); 				//显示界面
 //                main.setAlwaysOnTop(true) ;		//总是前端显示
+                
+                buf.append("|true|").append(System.currentTimeMillis()-start) ;
+                Logs.info(buf);
                 return ;
     		} else {
     			message="用户名或密码错误。" ;
@@ -153,6 +162,9 @@ public class LoginFrame extends JFrame{
     	}
     	changeProofText() ;
     	jop.showMessageDialog(this, message) ;
+    	
+    	buf.append("|false>").append(message).append("|").append(System.currentTimeMillis()-start) ;
+    	Logs.info(buf);
     }
 
     class RunButtonActionAdapter implements ActionListener {
