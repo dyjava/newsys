@@ -40,9 +40,6 @@ public class ListIncomePanel extends CommonPanel {
 //	table
     List<List<Object>> data = new ArrayList<List<Object>>() ;
     
-//	button
-    JButton submitButton = new JButton();
-    
     public ListIncomePanel() {
         kindList = ConstService.kindService.findKindList(1) ;
         kindBox.addItem("-请选择-") ;
@@ -53,7 +50,9 @@ public class ListIncomePanel extends CommonPanel {
         beginTimeText.setText(beginDate) ;
         String endDate = new SimpleDateFormat("yyyy-MM-dd").format(new Date()) ;
         endTimeText.setText(endDate) ;
-        
+
+//    	button
+        JButton submitButton = new JButton();
         submitButton.setText("确定");
         submitButton.addActionListener(new SubmitActionAdapter());
         
@@ -82,8 +81,7 @@ public class ListIncomePanel extends CommonPanel {
         super.printSearchTableModel() ;
         
 //        初始化表数据
-        List<Income> ulist = ConstService.incomeService.findIncomeList(beginDate,endDate, new Income(),ConstService.user) ;
-        data = getData(ulist) ;
+        data = getData(beginDate,endDate, new Income()) ;
         TableFactory.freshTableData(table, data) ;
     }
 
@@ -106,21 +104,23 @@ public class ListIncomePanel extends CommonPanel {
         	Kind kind = kindList.get(index-1) ;
     		income.setKindid(kind.getUid()) ;
     	}
-        List<Income> ulist = ConstService.incomeService.findIncomeList(begin, end, income, ConstService.user) ;
-        
-        TableFactory.freshTableData(table, getData(ulist)) ;
+
+    	data = getData(begin, end, income) ;
+        TableFactory.freshTableData(table, data) ;
     }
     
 //    查询结果输出到表格
-    private List<List<Object>> getData(List<Income> dataList){
-    	data.removeAll(data) ;
+    private List<List<Object>> getData(String begin,String end,Income income){
+    	List<List<Object>> data = new ArrayList<List<Object>>() ;
+    	
+    	List<Income> dataList = ConstService.incomeService.findIncomeList(begin, end, income) ;
     	double money =0 ;
     	int count =0 ;
         if(dataList!=null)
         for(int i=0;i<dataList.size();i++){
         	List<Object> l = new ArrayList<Object>() ;
         	Income in = dataList.get(i) ;
-        	l.add(in.getUid()) ;
+        	l.add(in.getId()) ;
         	l.add(in.getTitle()) ;
         	l.add(DoubleUtil.money(in.getMoney())) ;
         	l.add(in.getKindtitle()) ;
@@ -139,10 +139,10 @@ public class ListIncomePanel extends CommonPanel {
         return data ;
     }
 
-    private void update(String uid){
+    private void update(String id){
     	this.removeAll();
     	this.repaint() ;
-    	this.add(new UpdateIncomePanel(uid));
+    	this.add(new UpdateIncomePanel(id));
     	this.validate();
     }
     class SubmitActionAdapter implements ActionListener {
@@ -157,13 +157,13 @@ public class ListIncomePanel extends CommonPanel {
     			JTable table = (JTable)e.getSource() ;
     			int allRow = table.getRowCount() ;
     			int row = table.getSelectedRow() ;
-    			int col = table.getSelectedColumn() ;
-    			String uid = data.get(row).get(0).toString() ;
+//    			int col = table.getSelectedColumn() ;
+    			String id = data.get(row).get(0).toString() ;
 //    			System.out.println("Doublc Clicked!"+row+"/"+uid);
     			
 //    			进入详细页面
     			if(row<allRow-1){
-    				update(uid) ;
+    				update(id) ;
 //    			} else {
 //    				showAcc(uid) ;
     			}

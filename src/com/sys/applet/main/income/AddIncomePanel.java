@@ -31,10 +31,6 @@ public class AddIncomePanel extends CommonPanel {
   JTextField timeText = new JTextField();
   private List<Kind> kindList ;
   
-//  button
-  JButton submitBut = new JButton();
-  JButton cancleBut = new JButton();
-  
   public AddIncomePanel() {
   	labList.add(new JLabel("说明")) ;
   	labList.add(new JLabel("收入")) ;
@@ -54,7 +50,10 @@ public class AddIncomePanel extends CommonPanel {
       fieldList.add(timeText) ;
       fieldList.add(null) ;
       
-//      按钮
+//      按钮  button
+      JButton submitBut = new JButton();
+      JButton cancleBut = new JButton();
+      
       submitBut.setText("提交");
       submitBut.addActionListener(new SubmitButtonActionAdapter());
       cancleBut.setText("取消");
@@ -93,12 +92,11 @@ public class AddIncomePanel extends CommonPanel {
       	in.setUserId(user.getUid()) ;
       	in.setUsername(user.getUsername()) ;
       	
-		int re = ConstService.incomeService.insertIncome(in, user) ;
-			
+		ConstService.incomeService.insertIncome(in) ;
   		message = "添加成功" ;
   		clear() ;
   	}
-  	jop.showMessageDialog(this, message) ;
+  	this.showMessageDialog(message) ;
   }
   private void clear(){
   	titleText.setText("") ;

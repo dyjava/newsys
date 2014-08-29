@@ -3,17 +3,15 @@ package com.sys.spring.account.dao;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.log4j.Logger;
-
 import com.sys.spring.account.domain.Diary;
 import com.sys.spring.dao.AbstractDBDao;
 import com.sys.spring.user.domain.User;
+import com.sys.util.Logs;
 
 /** 
  * by dyong 2010-6-16
  */
 public class DiaryDaoImpl extends AbstractDBDao implements DiaryDao {
-	private static final Logger log = Logger.getLogger(DiaryDaoImpl.class);
 	
 	public List<Diary> findDiaryListByUser(String begin, String end, Diary diary, User user) {
 		long start = System.currentTimeMillis() ;
@@ -44,7 +42,7 @@ public class DiaryDaoImpl extends AbstractDBDao implements DiaryDao {
 		.append("|").append(this.list2String(params))
 		.append("|").append(list.size())
 		.append("|").append(System.currentTimeMillis() - start) ;
-		log.info(buf) ;
+		Logs.info(buf) ;
 		return list;
 	}
 
@@ -69,7 +67,7 @@ public class DiaryDaoImpl extends AbstractDBDao implements DiaryDao {
 		.append("|").append(this.list2String(params))
 		.append("|").append(result)
 		.append("|").append(System.currentTimeMillis() - start) ;
-		log.info(buf) ;
+		Logs.info(buf) ;
 		
 		return result ;
 	}
@@ -100,7 +98,7 @@ public class DiaryDaoImpl extends AbstractDBDao implements DiaryDao {
 		.append("|").append(this.list2String(params))
 		.append("|").append(result)
 		.append("|").append(System.currentTimeMillis() - start) ;
-		log.info(buf) ;
+		Logs.info(buf) ;
 		
 		return result ;
 	}
@@ -118,7 +116,7 @@ public class DiaryDaoImpl extends AbstractDBDao implements DiaryDao {
 		.append("|").append(id)
 		.append("|").append(list.size())
 		.append("|").append(System.currentTimeMillis() - start) ;
-		log.info(buf) ;
+		Logs.info(buf) ;
 		
 		if(list==null || list.size()==0){
 			return new Diary() ;

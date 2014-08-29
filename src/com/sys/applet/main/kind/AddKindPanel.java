@@ -25,10 +25,6 @@ public class AddKindPanel extends CommonPanel{
     JComboBox parentBox = new JComboBox();
     private List<Kind> kindList ;
     
-//    button
-    JButton submitBut = new JButton();
-    JButton cancleBut = new JButton();
-    
     public AddKindPanel() {
 //       标签
         labList.add(new JLabel("名称")) ;
@@ -43,7 +39,10 @@ public class AddKindPanel extends CommonPanel{
         	parentBox.addItem(k.getTitle()) ;
         }
         fieldList.add(parentBox) ;
-//        按钮
+//        按钮      button
+        JButton submitBut = new JButton();
+        JButton cancleBut = new JButton();
+        
         submitBut.setText("提交");
         submitBut.addActionListener(new SubmitButtonActionAdapter());
         cancleBut.setText("取消");
@@ -78,18 +77,11 @@ public class AddKindPanel extends CommonPanel{
     		kind.setNote(note) ;
     		kind.setParentId(parentId) ;
     		
-        	for(Kind k:kindList){
-        		if(k.getTitle().equals(kind)){
-        			kind.setParentId(k.getUid()) ;
-        			break ;
-        		}
-        	}
-			int re = ConstService.kindService.insertKind(kind) ;
-			
+			ConstService.kindService.insertKind(kind) ;
     		message = "添加成功" ;
     		clear() ;
     	}
-    	jop.showMessageDialog(this, message) ;
+    	this.showMessageDialog(message) ;
     }
     private void clear(){
     	titleText.setText("") ;

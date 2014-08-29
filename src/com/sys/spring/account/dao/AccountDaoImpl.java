@@ -3,18 +3,16 @@ package com.sys.spring.account.dao;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.log4j.Logger;
 
 import com.sys.spring.account.domain.Account;
 import com.sys.spring.account.domain.AccountTable;
 import com.sys.spring.dao.AbstractDBDao;
-import com.sys.spring.user.domain.User;
+import com.sys.util.Logs;
 
 /** 
  * by dyong 2010-6-16
  */
 public class AccountDaoImpl extends AbstractDBDao implements AccountDao {
-	private static final Logger log = Logger.getLogger(AccountDaoImpl.class);
 	
 	public List<Account> findAccountList(String begin, String end,Account account) {
 		long start = System.currentTimeMillis() ;
@@ -30,10 +28,6 @@ public class AccountDaoImpl extends AbstractDBDao implements AccountDao {
 		if(account.getKid()>0){
 			sql.append(" and kid=?") ;
 			params.add(account.getKid()) ;
-		}
-		if(account.getKindid()!=null && account.getKindid().length()>0){
-			sql.append(" and kindid=?") ;
-			params.add(account.getKindid()) ;
 		}
 		if(account.getKindid()!=null && account.getKindid().length()>0){
 			sql.append(" and kindid=?") ;
@@ -58,7 +52,7 @@ public class AccountDaoImpl extends AbstractDBDao implements AccountDao {
 		
 		buf.append("|").append(list.size()) ;
 		buf.append("|").append(System.currentTimeMillis() - start) ;
-		log.info(buf) ;
+		Logs.info(buf) ;
 		return list ;
 	}
 
@@ -87,7 +81,7 @@ public class AccountDaoImpl extends AbstractDBDao implements AccountDao {
 		.append("|").append(this.list2String(params))
 		.append("|").append(result)
 		.append("|").append(System.currentTimeMillis() - start) ;
-		log.info(buf) ;
+		Logs.info(buf) ;
 		return result ;
 	}
 
@@ -133,7 +127,7 @@ public class AccountDaoImpl extends AbstractDBDao implements AccountDao {
 		.append("|").append(this.list2String(params))
 		.append("|").append(result)
 		.append("|").append(System.currentTimeMillis() - start) ;
-		log.info(buf) ;
+		Logs.info(buf) ;
 		
 		return result ;
 	}
@@ -151,7 +145,7 @@ public class AccountDaoImpl extends AbstractDBDao implements AccountDao {
 		.append("|").append(id)
 		.append("|").append(list.size())
 		.append("|").append(System.currentTimeMillis() - start) ;
-		log.info(buf) ;
+		Logs.info(buf) ;
 		
 		if(list==null || list.size()==0){
 			return new Account() ;
@@ -161,7 +155,7 @@ public class AccountDaoImpl extends AbstractDBDao implements AccountDao {
 	}
 
 	public List<AccountTable> findAccountTableList(String begin, String end,
-			Account account, User user,String type) {
+			Account account, String type) {
 		// TODO Auto-generated method stub
 		return null;
 	}

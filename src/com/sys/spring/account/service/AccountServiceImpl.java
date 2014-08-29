@@ -7,8 +7,6 @@ import java.util.UUID;
 import com.sys.spring.account.dao.AccountDao;
 import com.sys.spring.account.domain.Account;
 import com.sys.spring.account.domain.AccountTable;
-import com.sys.spring.user.domain.User;
-import com.sys.util.Logs;
 
 
 /** 
@@ -26,40 +24,33 @@ public class AccountServiceImpl implements AccountService {
 		this.accountDao = accountDao;
 	}
 
-	public Account findAccountById(int id,User user) {
+	public Account findAccountById(int id) {
 		// TODO Auto-generated method stub
 		Account acc = accountDao.findAccountById(id);
 		acc.setMoney(this.round(acc.getMoney(), 2, 1)) ;
 		return acc ;
 	}
 
-	public List<Account> findAccountList(String begin, String end,
-			Account account,User user) {
+	public List<Account> findAccountList(String begin, String end,Account account) {
 		// TODO Auto-generated method stub
-		Logs.logInfo(user.getUsername(), "findAccountList", begin+","+end+","+account.toString()) ;
 		return accountDao.findAccountList(begin, end, account);
 	}
 
-	public int insertAccount(Account account,User user) {
+	public int insertAccount(Account account) {
 		// TODO Auto-generated method stub
 		account.setUid(UUID.randomUUID().toString()) ;
-		account.setUserId(user.getUid()) ;
-		account.setUsername(user.getUsername()) ;
-		Logs.logInfo(user.getUsername(), "insertAccount", account.toString()) ;
+//		account.setUserId(user.getUid()) ;
+//		account.setUsername(user.getUsername()) ;
 		return accountDao.insertAccount(account);
 	}
 
-	public int updateAccount(Account account,User user) {
-		// TODO Auto-generated method stub
-		Logs.logInfo(user.getUsername(), "updateAccount", account.toString()) ;
+	public int updateAccount(Account account) {
 		return accountDao.updateAccount(account);
 	}
 
 	public List<AccountTable> findAccountTableList(String begin, String end,
-			Account account, User user,String type) {
-		// TODO Auto-generated method stub
-		Logs.logInfo(user.getUsername(), "findAccountTableList", begin+","+end+","+account.toString()) ;
-		return accountDao.findAccountTableList(begin, end, account, user,type);
+			Account account,String type) {
+		return accountDao.findAccountTableList(begin, end, account,type);
 	}
 
 

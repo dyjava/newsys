@@ -67,7 +67,7 @@ public class AddDiaryPanel extends CommonPanel{
     		message = "添加成功" ;
     		clear() ;
     	}
-    	jop.showMessageDialog(this, message) ;
+    	this.showMessageDialog(message) ;
     }
     private void clear(){
     	titleText.setText("") ;

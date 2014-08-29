@@ -34,10 +34,6 @@ public class AddAccountPanel extends CommonPanel{
     JTextField timeText = new JTextField();
     private List<Kind> kindList ;
     
-//    button
-    JButton submitBut = new JButton();
-    JButton cancleBut = new JButton();
-    
     public AddAccountPanel() {
     	labList.add(new JLabel("名称")) ;
     	labList.add(new JLabel("价格")) ;
@@ -46,7 +42,7 @@ public class AddAccountPanel extends CommonPanel{
     	labList.add(new JLabel("记录人：\t"+ConstService.user.getName())) ;
     	
 //        数据
-        kindList = ConstService.kindService.findKindList(-1) ;
+        kindList = ConstService.kindService.findOutKindList() ;
         for(Kind k:kindList){
         	kindBox.addItem(k.getTitle()) ;
         }
@@ -57,7 +53,10 @@ public class AddAccountPanel extends CommonPanel{
         fieldList.add(timeText) ;
         fieldList.add(null) ;
         
-//        按钮
+//        按钮      button
+        JButton submitBut = new JButton();
+        JButton cancleBut = new JButton();
+        
         submitBut.setText("提交");
         submitBut.addActionListener(new SubmitButtonActionAdapter());
         cancleBut.setText("取消");
@@ -98,7 +97,7 @@ public class AddAccountPanel extends CommonPanel{
         	acc.setUserId(user.getUid()) ;
         	acc.setUsername(user.getUsername()) ;
         	
-			int re = ConstService.accService.insertAccount(acc, user) ;
+			int re = ConstService.accService.insertAccount(acc) ;
 			if(re==1){
 				message = "添加成功" ;
 			}

@@ -61,7 +61,8 @@ public class ListUserPanel extends CommonPanel{
         
         super.printSearchTableModel() ;
         
-        TableFactory.freshTableData(table, getData(new User())) ;
+        data = getData(new User()) ;
+        TableFactory.freshTableData(table, data) ;
     }
 
     private void submitAction(ActionEvent e) {//查询 显示
@@ -70,11 +71,14 @@ public class ListUserPanel extends CommonPanel{
         User u = new User() ;
         u.setName(name) ;
         u.setRank(rank) ;
-        TableFactory.freshTableData(table, getData(u)) ;
+        
+        data = getData(u) ;
+        TableFactory.freshTableData(table, data) ;
     }
     
 //    查询数据
     private List<List<Object>> getData(User u){
+    	List<List<Object>> data = new ArrayList<List<Object>>() ;
 //    	查询
     	List<User> ulist = ConstService.userService.getUsersByUser(u) ;
     	

@@ -18,8 +18,7 @@ import com.sys.spring.account.domain.Kind;
  * by dyong 2010-9-1
  */
 public class UpdateAccountPanel extends CommonPanel{
-
-/**
+	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -8682544940082314455L;
@@ -30,13 +29,10 @@ public class UpdateAccountPanel extends CommonPanel{
     JTextField timeText = new JTextField();
     private List<Kind> kindList ;
     
-//    button
-    JButton submitBut = new JButton();
-    JButton cancleBut = new JButton();
     int id ;
     public UpdateAccountPanel(int id) {
     	this.id = id ;
-    	Account acc = ConstService.accService.findAccountById(id, ConstService.user) ;
+    	Account acc = ConstService.accService.findAccountById(id) ;
     	
     	labList.add(new JLabel("名称")) ;
     	labList.add(new JLabel("价格")) ;
@@ -45,7 +41,7 @@ public class UpdateAccountPanel extends CommonPanel{
     	labList.add(new JLabel("记录人：\t"+acc.getUsername())) ;
     	
 //        数据
-        kindList = ConstService.kindService.findKindList(-1) ;
+        kindList = ConstService.kindService.findOutKindList() ;
         for(Kind k:kindList){
         	kindBox.addItem(k.getTitle()) ;
         	if(k.getUid().equals(acc.getKindid())){
@@ -61,7 +57,9 @@ public class UpdateAccountPanel extends CommonPanel{
         fieldList.add(timeText) ;
         fieldList.add(null) ;
         
-//        按钮
+//        按钮      button
+        JButton submitBut = new JButton();
+//        JButton cancleBut = new JButton();
         submitBut.setText("提交");
         submitBut.addActionListener(new SubmitButtonActionAdapter());
         buttonList.add(submitBut) ;
@@ -75,14 +73,14 @@ public class UpdateAccountPanel extends CommonPanel{
     	Kind kind = kindList.get(kindex) ;
     	String time = timeText.getText() ;
     	
-    	Account acc = ConstService.accService.findAccountById(id, ConstService.user) ;
+    	Account acc = ConstService.accService.findAccountById(id) ;
     	acc.setTitle(title) ;
     	acc.setMoney(Double.parseDouble(money)) ;
     	acc.setKid(kind.getId()) ;
     	acc.setKindid(kind.getUid()) ;
     	acc.setKindtitle(kind.getTitle()) ;
     	acc.setDatetime(time) ;
-    	ConstService.accService.updateAccount(acc, ConstService.user) ;
+    	ConstService.accService.updateAccount(acc) ;
     	
 //    	list
     	this.removeAll();

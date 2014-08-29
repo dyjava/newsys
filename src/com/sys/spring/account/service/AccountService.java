@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.sys.spring.account.domain.Account;
 import com.sys.spring.account.domain.AccountTable;
-import com.sys.spring.user.domain.User;
 
 
 /** 
@@ -12,14 +11,14 @@ import com.sys.spring.user.domain.User;
  */
 public interface AccountService {
 	
-	public int insertAccount(Account account,User user) ;
+	public int insertAccount(Account account) ;
 	
-	public int updateAccount(Account account,User user) ;
+	public int updateAccount(Account account) ;
 	
-	public List<Account> findAccountList(String begin,String end,Account account,User user) ;
+	public List<Account> findAccountList(String begin,String end,Account account) ;
 	
-	public Account findAccountById(int id,User user) ;
+	public Account findAccountById(int id) ;
 	
-	public List<AccountTable> findAccountTableList(String begin,String end,Account account,User user,String type) ;
+	public List<AccountTable> findAccountTableList(String begin,String end,Account account,String type) ;
 	
 }

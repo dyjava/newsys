@@ -16,6 +16,12 @@ public interface KindService {
 	
 //	按父级ID查询
 	public List<Kind> findKindList(int parentId) ;
+	//消耗分类
+	public List<Kind> findOutKindList() ;
+	//收入分类
+	public List<Kind> findIncomeKindList() ;
+	//所有分类
+	public List<Kind> findAllKindList() ;
 	
 	public Kind findKindById(int id) ;
 	

@@ -25,7 +25,6 @@ public class CommonPanel extends JPanel {
 	private static final long serialVersionUID = 7110139687990358872L;
 	
 	XYLayout xYLayout1 = new XYLayout();
-	 public JOptionPane jop = new JOptionPane();
 	 
 	 public ArrayList<JLabel> labList = new ArrayList<JLabel>();
 	 public ArrayList<JComponent> fieldList = new ArrayList<JComponent>();
@@ -121,5 +120,9 @@ public class CommonPanel extends JPanel {
 		}
 		
 		this.add(jScrollPane1, new XYConstraints(x_start, y, -1, -1));
+	 }
+	 
+	 protected void showMessageDialog(String message){
+		 JOptionPane.showMessageDialog(this, message) ;
 	 }
 }

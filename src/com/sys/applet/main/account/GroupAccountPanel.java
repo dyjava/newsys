@@ -38,12 +38,8 @@ public class GroupAccountPanel extends CommonPanel{
 //	table
     List<List<Object>> data = new ArrayList<List<Object>>() ;
     
-//	button
-    JButton submitButton = new JButton();
-    JButton imgButton = new JButton() ;
-    
     public GroupAccountPanel() {
-        kindList = ConstService.kindService.findKindList(-1) ;
+        kindList = ConstService.kindService.findOutKindList() ;
         kindBox.addItem("-请选择-") ;
         for(Kind k:kindList){
         	kindBox.addItem(k.getTitle()) ;
@@ -56,6 +52,10 @@ public class GroupAccountPanel extends CommonPanel{
         typeBox.addItem("year") ;
         typeBox.addItem("month") ;
         typeBox.addItem("day") ;
+
+//    	button
+        JButton submitButton = new JButton();
+        JButton imgButton = new JButton() ;
         
         submitButton.setText("确定");
         submitButton.addActionListener(new SubmitActionAdapter());
@@ -88,9 +88,8 @@ public class GroupAccountPanel extends CommonPanel{
         
         super.printSearchTableModel() ;
         
-//        初始化表数据
-        List<AccountTable> ulist = ConstService.accService.findAccountTableList(beginDate,endDate, new Account(),ConstService.user,"kind") ;
-        data = getData(ulist) ;
+//      初始化表数据
+        data = getData(beginDate,endDate, new Account(),"kind") ;
         TableFactory.freshTableData(table, data) ;
     }
 
@@ -114,14 +113,16 @@ public class GroupAccountPanel extends CommonPanel{
         	Kind kind = kindList.get(index-1) ;
     		acc.setKindid(kind.getUid()) ;
     	}
-        List<AccountTable> ulist = ConstService.accService.findAccountTableList(begin, end, acc, ConstService.user,type) ;
-        
-        TableFactory.freshTableData(table, getData(ulist)) ;
+    	
+    	data = getData(begin, end, acc,type) ;
+        TableFactory.freshTableData(table, data) ;
     }
     
 //    查询结果输出到表格
-    private List<List<Object>> getData(List<AccountTable> accList){
-    	data.removeAll(data) ;
+    private List<List<Object>> getData(String begin,String end,Account account,String type){
+    	List<List<Object>> data = new ArrayList<List<Object>>() ;
+    	
+    	List<AccountTable> accList = ConstService.accService.findAccountTableList(begin, end, account,type) ;
         if(accList!=null)
         for(int i=0;i<accList.size();i++){
         	List<Object> l = new ArrayList<Object>() ;
@@ -142,7 +143,7 @@ public class GroupAccountPanel extends CommonPanel{
     	Account acc = getAccount() ;
     	
     	String type = (String) typeBox.getSelectedItem() ;
-    	List<AccountTable> list = ConstService.accService.findAccountTableList(begin, end, acc, ConstService.user, type);
+    	List<AccountTable> list = ConstService.accService.findAccountTableList(begin, end, acc, type);
     	this.removeAll();
     	this.repaint() ;
     	this.add(new ListAccountImagePanel(list,type,begin,end));

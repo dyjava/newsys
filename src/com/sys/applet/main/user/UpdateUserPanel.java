@@ -64,7 +64,8 @@ public class UpdateUserPanel extends CommonPanel{
         
         super.printFormModel() ;
     }
-    private void submitAction(ActionEvent e) {
+    @SuppressWarnings("deprecation")
+	private void submitAction(ActionEvent e) {
     	String message = "" ;
     	String name = nameText.getText().trim() ;
     	String pwd = passwordText.getText().trim() ;
@@ -91,9 +92,9 @@ public class UpdateUserPanel extends CommonPanel{
 			
     	}
     	if(message.length()>0){
-    		jop.showMessageDialog(this, message) ;
+    		this.showMessageDialog(message) ;
     	} else {
-    		jop.showMessageDialog(this, "修改成功") ;
+    		this.showMessageDialog("修改成功") ;
     		listPanel() ;
     	}
     }

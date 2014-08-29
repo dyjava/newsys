@@ -38,11 +38,8 @@ public class ListAccountPanel extends CommonPanel{
 //	table
     List<List<Object>> data = new ArrayList<List<Object>>() ;
     
-//	button
-    JButton submitButton = new JButton();
-    
     public ListAccountPanel() {
-        kindList = ConstService.kindService.findKindList(-1) ;
+        kindList = ConstService.kindService.findOutKindList() ;
         kindBox.addItem("-请选择-") ;
         for(Kind k:kindList){
         	kindBox.addItem(k.getTitle()) ;
@@ -51,7 +48,9 @@ public class ListAccountPanel extends CommonPanel{
         beginTimeText.setText(beginDate) ;
         String endDate = new SimpleDateFormat("yyyy-MM-dd").format(new Date()) ;
         endTimeText.setText(endDate) ;
-        
+
+//    	button
+        JButton submitButton = new JButton();
         submitButton.setText("确定");
         submitButton.addActionListener(new SubmitActionAdapter());
         
@@ -80,23 +79,44 @@ public class ListAccountPanel extends CommonPanel{
         super.printSearchTableModel() ;
         
 //        初始化表数据
-        List<Account> ulist = ConstService.accService.findAccountList(beginDate,endDate, new Account(),ConstService.user) ;
-        data = getData(ulist) ;
+        data =  getData(beginDate,endDate, new Account()) ;
         TableFactory.freshTableData(table, data) ;
     }
 
-    private void submitAction(ActionEvent e) {//查询 显示
+    /**
+     * 查询 显示
+     * @param e
+     */
+    private void submitAction(ActionEvent e) {
     	String begin = beginTimeText.getText() ;
     	String end = endTimeText.getText() ;
-    	Account acc = getAccount() ;
-    	List<Account> ulist = ConstService.accService.findAccountList(begin, end, acc, ConstService.user) ;
-        
-        TableFactory.freshTableData(table, getData(ulist)) ;
+
+    	Account acc = new Account() ;
+    	String title = titleText.getText() ;
+    	if(title!=null && title.length()>0){
+    		acc.setTitle(title) ;
+    	}
+    	String money = moneyText.getText() ;
+    	if(money!=null && money.trim().length()>0){
+    		acc.setMoney(Double.parseDouble(money)) ;
+    	}
+    	int index = kindBox.getSelectedIndex() ;
+    	if(index>0){
+        	Kind kind = kindList.get(index-1) ;
+    		acc.setKindid(kind.getUid()) ;
+    		acc.setKid(kind.getId());
+    	}
+    	
+    	data = getData(begin, end, acc) ;
+        TableFactory.freshTableData(table, data) ;
     }
     
 //    查询结果输出到表格
-    private List<List<Object>> getData(List<Account> accList){
-    	data.removeAll(data) ;
+    private List<List<Object>> getData(String begin, String end,Account account){
+    	List<List<Object>> data = new ArrayList<List<Object>>() ;
+    	
+    	List<Account> accList = ConstService.accService.findAccountList(begin, end, account) ;
+    	
     	double allMoney = 0 ;
     	int count = 0 ;
         if(accList!=null)
@@ -128,24 +148,7 @@ public class ListAccountPanel extends CommonPanel{
     	this.add(new UpdateAccountPanel(id));
     	this.validate();
     }
-    private Account getAccount(){
-    	String title = titleText.getText() ;
-    	String money = moneyText.getText() ;
-    	int index = kindBox.getSelectedIndex() ;
-    	
-    	Account acc = new Account() ;
-    	if(title!=null && title.length()>0){
-    		acc.setTitle(title) ;
-    	}
-    	if(money!=null && money.trim().length()>0){
-    		acc.setMoney(Double.parseDouble(money)) ;
-    	}
-    	if(index>0){
-        	Kind kind = kindList.get(index-1) ;
-    		acc.setKindid(kind.getUid()) ;
-    	}
-        return acc ;
-    }
+    
     class SubmitActionAdapter implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             submitAction(e);

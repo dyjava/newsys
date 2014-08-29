@@ -40,5 +40,14 @@ public class KindServiceImpl implements KindService {
 	public void deleteKindById(int id) {
 		kindDao.deleteKindById(id) ;
 	}
+	public List<Kind> findOutKindList() {
+		return kindDao.findKindListByParentId(-1);
+	}
+	public List<Kind> findIncomeKindList() {
+		return kindDao.findKindListByParentId(1);
+	}
+	public List<Kind> findAllKindList() {
+		return kindDao.findAllKindList() ;
+	}
 
 }

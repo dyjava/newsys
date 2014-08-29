@@ -10,6 +10,7 @@ import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 
 import com.sys.applet.ConstService;
@@ -30,9 +31,6 @@ public class ListKindPanel extends CommonPanel{
 	JComboBox parentBox = new JComboBox();
 	List<String> list = new ArrayList<String>() ;
 	
-	//  button
-	JButton submitBut = new JButton();
-	
 //	table
     List<List<Object>> data = new ArrayList<List<Object>>() ;
 	
@@ -45,13 +43,14 @@ public class ListKindPanel extends CommonPanel{
     		parentBox.addItem(k.getTitle()) ;
     		list.add(k.getUid()) ;
     	}
-//       按钮
+//       按钮  button
+    	JButton submitBut = new JButton();
+    	
     	submitBut.setText("提交");
     	submitBut.addActionListener(new SubmitActionAdapter());
        
-//        
     	List<String> title = new ArrayList<String>() ;
-    	title.add("UUID") ;
+    	title.add("ID") ;
     	title.add("TITLE") ;
     	title.add("NOTE") ;
     	title.add("上级ID") ;
@@ -65,18 +64,20 @@ public class ListKindPanel extends CommonPanel{
         
         super.printSearchTableModel() ;
         
-        TableFactory.freshTableData(table, getData(-1)) ;
+        data = getData(-1) ;
+        TableFactory.freshTableData(table, data) ;
     }
 
     private void submitAction(ActionEvent e) {//查询 显示
     	int parentId = java.lang.Integer.parseInt(list.get(parentBox.getSelectedIndex())) ;
-        List<List<Object>> data = getData(parentId) ;
+        data = getData(parentId) ;
 
         TableFactory.freshTableData(table, data) ;
     }
     
 //    查询数据
     private List<List<Object>> getData(int parentId){
+    	List<List<Object>> data = new ArrayList<List<Object>>() ;
 //    	查询
     	List<Kind> ulist = ConstService.kindService.findKindList(parentId) ;
     	
@@ -85,7 +86,7 @@ public class ListKindPanel extends CommonPanel{
         for(int i=0;i<ulist.size();i++){
         	List<Object> l = new ArrayList<Object>() ;
         	Kind k = ulist.get(i) ;
-        	l.add(k.getUid()) ;
+        	l.add(k.getId()) ;
         	l.add(k.getTitle()) ;
         	l.add(k.getNote()) ;
         	l.add(k.getParentId()) ;
@@ -104,20 +105,20 @@ public class ListKindPanel extends CommonPanel{
      * 跳转到修改页面
      * @param uid
      */
-    private void updateKind(int uid){
+    private void updateKind(int id){
     	this.removeAll();
     	this.repaint() ;
-    	this.add(new UpdateKindPanel(uid));
+    	this.add(new UpdateKindPanel(id));
     	this.validate();
     }
     /**
      * 删除选中行
      * @param uid
      */
-    private void deleteKind(int uid){
-    	int rel=jop.showConfirmDialog(this,"你确定删除"+uid+"吗？","删除",jop.YES_NO_OPTION ) ;
-        if(rel==jop.YES_OPTION ){
-        	ConstService.kindService.deleteKindById(uid) ;
+    private void deleteKind(int id){
+		int rel=JOptionPane .showConfirmDialog(this,"你确定删除"+id+"吗？","删除",JOptionPane.YES_NO_OPTION ) ;
+        if(rel==JOptionPane.YES_OPTION ){
+        	ConstService.kindService.deleteKindById(id) ;
         }
         
         this.removeAll();
@@ -132,13 +133,13 @@ public class ListKindPanel extends CommonPanel{
     			JTable table = (JTable)e.getSource() ;
     			int row = table.getSelectedRow() ;
     			int col = table.getSelectedColumn() ;
-    			int uid = java.lang.Integer.parseInt(data.get(row).get(0).toString()) ;
+    			int id = java.lang.Integer.parseInt(data.get(row).get(0).toString()) ;
 //    			System.out.println("Doublc Clicked!"+row+"/"+uid);
     			
     			if(col==4){
-    				deleteKind(uid) ;
+    				deleteKind(id) ;
     			} else {
-    				updateKind(uid) ;
+    				updateKind(id) ;
     			}
     		}
     	}

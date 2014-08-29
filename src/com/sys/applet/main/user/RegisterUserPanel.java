@@ -52,11 +52,12 @@ public class RegisterUserPanel extends CommonPanel{
     private void rebackAction(ActionEvent e) {
     	clear() ;
     }
-    private void submitAction(ActionEvent e) {
+    @SuppressWarnings("deprecation")
+	private void submitAction(ActionEvent e) {
     	String message = "" ;
     	String name = nameText.getText().trim() ;
     	String username = userNameText.getText().trim() ;
-    	String pwd = passwordText.getText().trim() ;
+		String pwd = passwordText.getText().trim() ;
     	
     	if(name==null || name.length()==0 ||
     			username==null || username.length()==0
@@ -72,7 +73,7 @@ public class RegisterUserPanel extends CommonPanel{
     		message = "注册成功" ;
     		clear() ;
     	}
-    	jop.showMessageDialog(this, message) ;
+    	this.showMessageDialog(message) ;
     }
     private void clear(){
     	nameText.setText("") ;

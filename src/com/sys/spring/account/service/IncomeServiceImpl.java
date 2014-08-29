@@ -5,8 +5,6 @@ import java.util.UUID;
 
 import com.sys.spring.account.dao.IncomeDao;
 import com.sys.spring.account.domain.Income;
-import com.sys.spring.user.domain.User;
-import com.sys.util.Logs;
 
 /** 
  * by dyong 2010-9-29
@@ -22,31 +20,23 @@ public class IncomeServiceImpl implements IncomeService {
 		this.incomeDao = incomeDao;
 	}
 
-	public Income findIncomeById(String id, User user) {
+	public Income findIncomeById(String id) {
 		// TODO Auto-generated method stub
-		Logs.logInfo(user.getUsername(), "findIncomeById", id) ;
 		return incomeDao.findIncomeById(id);
 	}
 
-	public List<Income> findIncomeList(String begin, String end, Income income,
-			User user) {
+	public List<Income> findIncomeList(String begin, String end, Income income) {
 		// TODO Auto-generated method stub
-		Logs.logInfo(user.getUsername(), "findIncomeList", begin+","+end+","+income.toString()) ;
 		return incomeDao.findIncomeList(begin, end, income);
 	}
 
-	public int insertIncome(Income income, User user) {
+	public int insertIncome(Income income) {
 		// TODO Auto-generated method stub
-		income.setUserId(user.getUid()) ;
-		income.setUsername(user.getName()) ;
 		income.setUid(UUID.randomUUID().toString()) ;
-		Logs.logInfo(user.getUsername(), "insertIncome", income.toString()) ;
 		return incomeDao.insertIncome(income);
 	}
 
-	public int updateIncome(Income income, User user) {
-		// TODO Auto-generated method stub
-		Logs.logInfo(user.getUsername(), "updateIncome", income.toString()) ;
+	public int updateIncome(Income income) {
 		return incomeDao.updateIncome(income);
 	}
 

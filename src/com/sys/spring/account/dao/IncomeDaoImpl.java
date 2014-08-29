@@ -2,16 +2,14 @@ package com.sys.spring.account.dao;
 
 import java.util.List;
 
-import org.apache.log4j.Logger;
-
 import com.sys.spring.account.domain.Income;
 import com.sys.spring.dao.AbstractDBDao;
+import com.sys.util.Logs;
 
 /** 
  * by dyong 2010-6-16
  */
 public class IncomeDaoImpl extends AbstractDBDao implements IncomeDao {
-	private static final Logger log = Logger.getLogger(IncomeDaoImpl.class);
 
 	public int insertIncome(Income in) {
 		long start = System.currentTimeMillis() ;
@@ -28,7 +26,7 @@ public class IncomeDaoImpl extends AbstractDBDao implements IncomeDao {
 		.append("|").append(params.toString())
 		.append("|").append(result)
 		.append("|").append(System.currentTimeMillis() - start) ;
-		log.info(buf) ;
+		Logs.info(buf) ;
 		return result ;
 	}
 

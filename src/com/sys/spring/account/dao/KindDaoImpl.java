@@ -3,16 +3,14 @@ package com.sys.spring.account.dao;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.log4j.Logger;
-
 import com.sys.spring.account.domain.Kind;
 import com.sys.spring.dao.AbstractDBDao;
+import com.sys.util.Logs;
 
 /** 
  * by dyong 2010-6-16
  */
 public class KindDaoImpl extends AbstractDBDao implements KindDao {
-	private static final Logger log = Logger.getLogger(KindDaoImpl.class);
 	
 	public List<Kind> findAllKindList() {
 		long start = System.currentTimeMillis() ;
@@ -27,7 +25,7 @@ public class KindDaoImpl extends AbstractDBDao implements KindDao {
 		.append("|").append("")
 		.append("|").append(list.size())
 		.append("|").append(System.currentTimeMillis() - start) ;
-		log.info(buf) ;
+		Logs.info(buf) ;
 		
 		return list;
 	}
@@ -51,7 +49,7 @@ public class KindDaoImpl extends AbstractDBDao implements KindDao {
 		.append("|").append(this.list2String(params))
 		.append("|").append(result)
 		.append("|").append(System.currentTimeMillis() - start) ;
-		log.info(buf) ;
+		Logs.info(buf) ;
 		return result ;
 	}
 
@@ -84,7 +82,7 @@ public class KindDaoImpl extends AbstractDBDao implements KindDao {
 		.append("|").append(this.list2String(params))
 		.append("|").append(result)
 		.append("|").append(System.currentTimeMillis() - start) ;
-		log.info(buf) ;
+		Logs.info(buf) ;
 		
 		return result ;
 	}
@@ -102,7 +100,7 @@ public class KindDaoImpl extends AbstractDBDao implements KindDao {
 		.append("|").append(id)
 		.append("|").append(list.size())
 		.append("|").append(System.currentTimeMillis() - start) ;
-		log.info(buf) ;
+		Logs.info(buf) ;
 		
 		if(list==null || list.size()==0){
 			return new Kind() ;
@@ -124,7 +122,7 @@ public class KindDaoImpl extends AbstractDBDao implements KindDao {
 		.append("|").append(parentId)
 		.append("|").append(list.size())
 		.append("|").append(System.currentTimeMillis() - start) ;
-		log.info(buf) ;
+		Logs.info(buf) ;
 		
 		if(list==null || list.size()==0){
 			return new ArrayList<Kind>() ;
@@ -146,7 +144,7 @@ public class KindDaoImpl extends AbstractDBDao implements KindDao {
 		.append("|").append(id)
 		.append("|").append(result)
 		.append("|").append(System.currentTimeMillis() - start) ;
-		log.info(buf) ;
+		Logs.info(buf) ;
 		
 		return result ;
 	}
