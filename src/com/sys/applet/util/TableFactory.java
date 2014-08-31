@@ -39,10 +39,10 @@ public class TableFactory {
     	TableModel model = (TableModel) table.getModel() ;
 //    	
 //    	更新表格数据
-//    	model.data = data ;
+    	model.data = data ;
     	
 //    	刷新到表格
-//    	model.fireTableDataChanged() ;
+    	model.fireTableDataChanged() ;
     	model.fireTableStructureChanged() ;
     }
 }

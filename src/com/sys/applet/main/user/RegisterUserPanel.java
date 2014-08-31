@@ -28,9 +28,9 @@ public class RegisterUserPanel extends CommonPanel{
     public RegisterUserPanel() {
 
 //       标签
-        labList.add(new JLabel("登录名:")) ;
-        labList.add(new JLabel("真实姓名:")) ;
-        labList.add(new JLabel("密码:")) ;
+        labList.add(new JLabel("用户名:")) ;
+        labList.add(new JLabel("姓名:")) ;
+        labList.add(new JLabel("密 码:")) ;
 
         fieldList.add(userNameText) ;
         fieldList.add(nameText) ;

@@ -16,7 +16,7 @@ import com.sys.spring.user.service.UserService;
 public class ConstService {
 
 	public static String ROOT = System.getProperty("user.dir") ;
-	public static User user ;
+	public static User user = new User() ;
 	
 	public static UserService userService ;
 	public static IncomeService incomeService ;

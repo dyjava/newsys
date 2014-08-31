@@ -45,6 +45,7 @@ public class AccountDaoImpl extends AbstractDBDao implements AccountDao {
 			sql.append(" and money>?") ;
 			params.add(account.getMoney()) ;
 		}
+		sql.append(" order by datetime desc") ;
 		
 		buf.append("|").append(sql) ;
 		buf.append("|").append(this.list2String(params)) ;

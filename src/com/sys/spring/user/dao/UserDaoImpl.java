@@ -78,7 +78,7 @@ public class UserDaoImpl extends AbstractDBDao implements UserDao {
 		ArrayList<Object> params = new ArrayList<Object>() ;
 		if(user.getUsername()!=null){
 			sqlStr.append(" and username like ?") ;
-			params.add(user.getUsername()) ;
+			params.add("%"+user.getUsername()+"%") ;
 		}
 		if(user.getEmail()!=null){
 			sqlStr.append(" and email like ?") ;
@@ -90,7 +90,7 @@ public class UserDaoImpl extends AbstractDBDao implements UserDao {
 		}
 		if(user.getName()!=null){
 			sqlStr.append(" and name = ?") ;
-			params.add(user.getName()) ;
+			params.add("%"+user.getName()+"%") ;
 		}
 		if(user.getRegistDate()!=null){
 			sqlStr.append(" and registdate = ?") ;

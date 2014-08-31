@@ -90,7 +90,7 @@ public class ListKindPanel extends CommonPanel{
         	l.add(k.getTitle()) ;
         	l.add(k.getNote()) ;
         	l.add(k.getParentId()) ;
-        	l.add("del");
+        	l.add("删除");
         	data.add(l) ;
         }
         return data ;

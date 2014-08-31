@@ -23,8 +23,8 @@ public class UserTree extends TreePanel {
 	    listButton.setText("信息修改");
 	    listButton.addActionListener(new ButtonActionAdapter(new ListUserPanel()));
 		    
-		updateButton.setText("信息修改");
-		updateButton.addActionListener(new ButtonActionAdapter(new UpdateUserPanel(ConstService.user.getId(),"update")));
+//		updateButton.setText("信息修改");
+//		updateButton.addActionListener(new ButtonActionAdapter(new UpdateUserPanel(ConstService.user.getId(),"update")));
 		
 		updatepwdButton.setText("密码修改");
 		updatepwdButton.addActionListener(new ButtonActionAdapter(new UpdateUserPanel(ConstService.user.getId(),"pwd")));
@@ -33,7 +33,7 @@ public class UserTree extends TreePanel {
 
 	    buttonList.add(registerButton);
 	    buttonList.add(listButton);
-	    buttonList.add(updateButton);
+//	    buttonList.add(updateButton);
 	    buttonList.add(updatepwdButton);
 	    
 	    super.printButton() ;

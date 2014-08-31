@@ -138,14 +138,14 @@ public class LoginFrame extends JFrame{
     		User u = new User() ;
     		u.setUsername(name) ;
     		u.setPassword(pwd) ;
-			User user = new User() ;//ConstService.userService.userLogin(u) ;
+			User user = ConstService.userService.userLogin(u) ;
     		if(user!=null){
     			Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
     			ConstService.setUser(user) ;
     			MainFrame main = new MainFrame();	//创建下一个界面的对象
                 dispose();							//关闭当前界面
-//                main.setSize(800, 600); 			//设置界面大小
-                main.setSize(screenSize.width/2, screenSize.height/2) ;
+                main.setSize(800, 600); 			//设置界面大小
+//                main.setSize(screenSize.width, screenSize.height-20) ;
                 main.setLocation(250, 150); 		//设置界面位置
                 main.setLocation(0,0);
                 main.setVisible(true); 				//显示界面
