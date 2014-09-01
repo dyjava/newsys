@@ -3,14 +3,12 @@ package com.sys.spring.user.dao;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.log4j.Logger;
-
 import com.sys.spring.dao.AbstractDBDao;
 import com.sys.spring.user.domain.User;
 import com.sys.util.CommUtil;
+import com.sys.util.Logs;
 
 public class UserDaoImpl extends AbstractDBDao implements UserDao {
-	private static final Logger log = Logger.getLogger(UserDaoImpl.class);
 	
 	/**
 	 * 用户删除
@@ -26,7 +24,7 @@ public class UserDaoImpl extends AbstractDBDao implements UserDao {
 		buf.append("|").append(sqlStr)
 		.append("|").append(result)
 		.append("|").append(System.currentTimeMillis()-start) ;
-		log.info(buf.toString()) ;
+		Logs.info(buf.toString()) ;
 		return result ;
 	}
 
@@ -45,7 +43,7 @@ public class UserDaoImpl extends AbstractDBDao implements UserDao {
 		buf.append("|").append(sqlStr)
 		.append("|").append(result)
 		.append("|").append(System.currentTimeMillis()-start) ;
-		log.info(buf.toString()) ;
+		Logs.info(buf.toString()) ;
 		return result ;
 	}
 
@@ -63,7 +61,7 @@ public class UserDaoImpl extends AbstractDBDao implements UserDao {
 		buf.append("|").append(sqlStr)
 		.append("|").append(result.getId())
 		.append("|").append(System.currentTimeMillis()-start) ;
-		log.info(buf.toString()) ;
+		Logs.info(buf.toString()) ;
 		return result ;
 	}
 
@@ -101,7 +99,7 @@ public class UserDaoImpl extends AbstractDBDao implements UserDao {
 		buf.append("|").append(sqlStr)
 		.append("|").append(result!=null?result.size():0)
 		.append("|").append(System.currentTimeMillis()-start) ;
-		log.info(buf.toString()) ;
+		Logs.info(buf.toString()) ;
 		return result ;
 	}
 
@@ -142,7 +140,7 @@ public class UserDaoImpl extends AbstractDBDao implements UserDao {
 		buf.append("|").append(sqlStr)
 		.append("|").append(result)
 		.append("|").append(System.currentTimeMillis()-start) ;
-		log.info(buf.toString()) ;
+		Logs.info(buf.toString()) ;
 		return result ;
 	}
 
@@ -165,7 +163,7 @@ public class UserDaoImpl extends AbstractDBDao implements UserDao {
 		buf.append("|").append(sqlStr)
 		.append("|").append(result)
 		.append("|").append(System.currentTimeMillis()-start) ;
-		log.info(buf.toString()) ;
+		Logs.info(buf.toString()) ;
 		return result ;
 	}
 	

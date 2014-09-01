@@ -1,9 +1,9 @@
 package com.sys.spring.account.dao;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
-import com.sys.spring.account.domain.Account;
 import com.sys.spring.account.domain.Income;
 import com.sys.spring.dao.AbstractDBDao;
 import com.sys.util.Logs;
@@ -12,7 +12,7 @@ import com.sys.util.Logs;
  * by dyong 2010-6-16
  */
 public class IncomeDaoImpl extends AbstractDBDao implements IncomeDao {
-
+	private String table = "income" ;
 	public int insertIncome(Income in) {
 		long start = System.currentTimeMillis() ;
 		StringBuffer buf = new StringBuffer() ;
@@ -33,41 +33,51 @@ public class IncomeDaoImpl extends AbstractDBDao implements IncomeDao {
 	}
 
 	public int updateIncome(Income income) {
-		// TODO Auto-generated method stub
-		return 0;
+		long start = System.currentTimeMillis() ;
+		StringBuffer buf = new StringBuffer() ;
+		buf.append(this.getClass().getName()).append("|").append("updateIncome") ;
+		
+		HashMap<String,Object> map = new HashMap<String,Object>() ;
+		map.put("title", income.getTitle()) ;
+		map.put("kid", income.getKid()) ;
+		map.put("kindId", income.getKindid()) ;
+		map.put("kindTitle", income.getKindtitle()) ;
+		map.put("money", income.getMoney()) ;
+		map.put("datetime", income.getDatetime()) ;
+		
+		int result = super.updateById(table, income.getId(), map) ;
+		
+		buf.append("|").append("")
+		.append("|").append("")
+		.append("|").append(result)
+		.append("|").append(System.currentTimeMillis() - start) ;
+		Logs.info(buf) ;
+		return result ;
 	}
 
-	public void deleteIncome(String id) {
+	public void deleteIncome(int id) {
 		long start = System.currentTimeMillis() ;
 		StringBuffer buf = new StringBuffer() ;
 		buf.append(this.getClass().getName()).append("|").append("deleteIncome") ;
 		
-		String sql = "delete from income where id=?" ;
-//		log.info(sql+"	"+kind.getTitle()+"	"+kind.getNote()+"	"+kind.getParentId()) ;
-		Object[] params = {id} ;
-		
-		int result = this.update(sql, params) ;
+		int result = super.deleteById(table, id) ;
 
-		buf.append("|").append(sql)
-		.append("|").append(params.toString())
+		buf.append("|").append(id)
+		.append("|").append("")
 		.append("|").append(result)
 		.append("|").append(System.currentTimeMillis() - start) ;
 		Logs.info(buf) ;
 	}
 
-	public Income findIncomeById(String id) {
+	public Income findIncomeById(int id) {
 		long start = System.currentTimeMillis() ;
 		StringBuffer buf = new StringBuffer() ;
 		buf.append(this.getClass().getName()).append("|").append("insertIncome") ;
 		
-		String sql = "select uid,title,money,kindId,kindTitle,datetime,userId,userName from income where id=?" ;
-//		log.info(sql+"	"+kind.getTitle()+"	"+kind.getNote()+"	"+kind.getParentId()) ;
-		Object[] params = {id} ;
-		
-		Income result = this.selectObject(sql, params, Income.class) ;
+		Income result = super.findByID(table, id, Income.class) ;
 
-		buf.append("|").append(sql)
-		.append("|").append(params.toString())
+		buf.append("|").append("")
+		.append("|").append(id)
 		.append("|").append(result.getId())
 		.append("|").append(System.currentTimeMillis() - start) ;
 		Logs.info(buf) ;

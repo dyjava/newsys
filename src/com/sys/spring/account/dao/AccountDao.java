@@ -15,7 +15,7 @@ public interface AccountDao {
 	
 	public int updateAccount(Account account) ;	//update
 	
-	public void deleteAccount(Account account) ;	//delete
+//	public void deleteAccount(Account account) ;	//delete
 	
 	public Account findAccountById(int id) ;	//find one object by id
 	

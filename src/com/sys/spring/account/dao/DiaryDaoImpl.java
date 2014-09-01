@@ -12,7 +12,7 @@ import com.sys.util.Logs;
  * by dyong 2010-6-16
  */
 public class DiaryDaoImpl extends AbstractDBDao implements DiaryDao {
-	
+	private String table = "diary" ;
 	public List<Diary> findDiaryListByUser(String begin, String end, Diary diary, User user) {
 		long start = System.currentTimeMillis() ;
 		StringBuffer buf = new StringBuffer() ;
@@ -22,11 +22,11 @@ public class DiaryDaoImpl extends AbstractDBDao implements DiaryDao {
 		ArrayList<Object> params = new ArrayList<Object>() ;
 		params.add(user.getUid()) ;
 		if(begin.length()>0){
-			sql.append(" and date(datetime)>=?") ;
+			sql.append(" and datetime>=?") ;
 			params.add(begin) ;
 		}
 		if(end.length()>0){
-			sql.append(" and date(datetime)<=?") ;
+			sql.append(" and datetime<=?") ;
 			params.add(end) ;
 		}
 		if(diary!=null){
@@ -108,11 +108,9 @@ public class DiaryDaoImpl extends AbstractDBDao implements DiaryDao {
 		StringBuffer buf = new StringBuffer() ;
 		buf.append(this.getClass().getName()).append("|").append("findDiaryById") ;
 		
-		String sql = "select * from diary where id = ? ";
-		
-		List<Diary> list = this.selectList(sql ,new Object[] {id} ,Diary.class) ;
+		List<Diary> list = super.findByID(table, id, Diary.class) ;
 
-		buf.append("|").append(sql)
+		buf.append("|").append("")
 		.append("|").append(id)
 		.append("|").append(list.size())
 		.append("|").append(System.currentTimeMillis() - start) ;

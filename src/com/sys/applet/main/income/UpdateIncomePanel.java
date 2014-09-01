@@ -26,9 +26,9 @@ public class UpdateIncomePanel extends CommonPanel {
     JTextField timeText = new JTextField();
     private List<Kind> kindList ;
     
-    String uid ;
-    public UpdateIncomePanel(String id) {
-    	this.uid = id ;
+    int id ;
+    public UpdateIncomePanel(int id) {
+    	this.id = id ;
     	Income income = ConstService.incomeService.findIncomeById(id) ;
     	
     	labList.add(new JLabel("名称")) ;
@@ -56,7 +56,7 @@ public class UpdateIncomePanel extends CommonPanel {
         
 //        按钮      button
         JButton submitBut = new JButton();
-        JButton cancleBut = new JButton();
+//        JButton cancleBut = new JButton();
         submitBut.setText("提交");
         submitBut.addActionListener(new SubmitButtonActionAdapter());
         buttonList.add(submitBut) ;
@@ -70,7 +70,7 @@ public class UpdateIncomePanel extends CommonPanel {
     	Kind kind = kindList.get(kindex) ;
     	String time = timeText.getText() ;
     	
-    	Income income = ConstService.incomeService.findIncomeById(uid) ;
+    	Income income = ConstService.incomeService.findIncomeById(id) ;
     	income.setTitle(title) ;
     	income.setMoney(Double.parseDouble(money)) ;
     	income.setKindid(kind.getUid()) ;

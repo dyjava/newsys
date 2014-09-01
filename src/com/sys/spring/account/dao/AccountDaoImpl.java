@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+
 import com.sys.spring.account.domain.Account;
 import com.sys.spring.account.domain.AccountTable;
 import com.sys.spring.dao.AbstractDBDao;
@@ -14,6 +15,7 @@ import com.sys.util.Logs;
  */
 public class AccountDaoImpl extends AbstractDBDao implements AccountDao {
 	
+	private String table = "account" ;
 	public List<Account> findAccountList(String begin, String end,Account account) {
 		long start = System.currentTimeMillis() ;
 		StringBuffer buf = new StringBuffer() ;
@@ -138,32 +140,71 @@ public class AccountDaoImpl extends AbstractDBDao implements AccountDao {
 		StringBuffer buf = new StringBuffer() ;
 		buf.append(this.getClass().getName()).append("|").append("findAccountById") ;
 
-		String sql = "select * from account where id = ? ";
+		Account account = super.findByID(table, id, Account.class) ;
 		
-		List<Account> list = this.selectList(sql, new Object[] {id}, Account.class) ;
-		
-		buf.append("|").append(sql)
+		buf.append("|").append("")
 		.append("|").append(id)
-		.append("|").append(list.size())
+		.append("|").append("")
 		.append("|").append(System.currentTimeMillis() - start) ;
 		Logs.info(buf) ;
-		
-		if(list==null || list.size()==0){
-			return new Account() ;
-		} else {
-			return list.get(0) ;
-		}
+		return account ;
 	}
 
 	public List<AccountTable> findAccountTableList(String begin, String end,
 			Account account, String type) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public void deleteAccount(Account account) {
-		// TODO Auto-generated method stub
+		long start = System.currentTimeMillis() ;
+		StringBuffer buf = new StringBuffer() ;
+		buf.append(this.getClass().getName()).append("|").append("findAccountTableList") ;
 		
+		StringBuffer sql = new StringBuffer(" from account where datetime>=? and datetime<=? ") ;
+		
+		ArrayList<Object> params = new ArrayList<Object>() ;
+		params.add(begin) ;
+		params.add(end) ;
+		
+		if(account.getKid()>0){
+			sql.append(" and kid=?") ;
+			params.add(account.getKid()) ;
+		}
+		if(account.getKindid()!=null && account.getKindid().length()>0){
+			sql.append(" and kindid=?") ;
+			params.add(account.getKindid()) ;
+		}
+		if(account.getTitle()!=null){
+			sql.append(" and title like ?") ;
+			params.add("%"+account.getTitle()+"%") ;
+		}
+		if(account.getMoney()>0){
+			sql.append(" and money>?") ;
+			params.add(account.getMoney()) ;
+		}
+		
+		String presql = "select count(*) countNum,sum(money) money" ;
+		//
+		if(type.equals("day")){
+			sql.append(" group by substring(datetime,1,10)") ;
+			presql+= ",'day' type,substring(datetime,1,10) other" ;
+		} else if(type.equals("month")){
+			sql.append(" group by substring(datetime,1,7)") ;
+			presql+= ",'month' type,substring(datetime,1,7) other" ;
+		} else if(type.equals("year")){
+			sql.append(" group by substring(datetime,1,4)") ;
+			presql+= ",'year' type,substring(datetime,1,4) other" ;
+		} else {
+			sql.append(" group by kid") ;
+			presql+= ",'kind' type,kid other" ;
+		}
+		
+		sql .append(" order by type ") ;
+		
+		buf.append("|").append(sql) ;
+		buf.append("|").append(this.list2String(params)) ;
+		List<AccountTable> list = this.selectList(presql+sql.toString(), params.toArray(), AccountTable.class) ;
+		
+		buf.append("|").append(list.size()) ;
+		buf.append("|").append(System.currentTimeMillis() - start) ;
+		Logs.info(buf) ;
+		return list ;
 	}
 
 }

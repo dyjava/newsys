@@ -15,6 +15,6 @@ public interface IncomeService {
 	
 	public List<Income> findIncomeList(String begin,String end,Income income) ;
 	
-	public Income findIncomeById(String id) ;
+	public Income findIncomeById(int id) ;
 	
 }

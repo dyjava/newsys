@@ -139,7 +139,7 @@ public class ListIncomePanel extends CommonPanel {
         return data ;
     }
 
-    private void update(String id){
+    private void update(int id){
     	this.removeAll();
     	this.repaint() ;
     	this.add(new UpdateIncomePanel(id));
@@ -163,7 +163,7 @@ public class ListIncomePanel extends CommonPanel {
     			
 //    			进入详细页面
     			if(row<allRow-1){
-    				update(id) ;
+    				update(Integer.parseInt(id)) ;
 //    			} else {
 //    				showAcc(uid) ;
     			}

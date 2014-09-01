@@ -11,17 +11,16 @@ import com.sys.util.Logs;
  * by dyong 2010-6-16
  */
 public class KindDaoImpl extends AbstractDBDao implements KindDao {
+	private String table = "kind" ;
 	
 	public List<Kind> findAllKindList() {
 		long start = System.currentTimeMillis() ;
 		StringBuffer buf = new StringBuffer() ;
 		buf.append(this.getClass().getName()).append("|").append("findAllKindList") ;
 		
-		String sql = "select * from kind ";
-		
-		List<Kind> list = this.selectList(sql ,new Object[] {} , Kind.class) ;
+		List<Kind> list = super.findAllList(table, Kind.class) ;
 
-		buf.append("|").append(sql)
+		buf.append("|").append("")
 		.append("|").append("")
 		.append("|").append(list.size())
 		.append("|").append(System.currentTimeMillis() - start) ;
@@ -92,21 +91,15 @@ public class KindDaoImpl extends AbstractDBDao implements KindDao {
 		StringBuffer buf = new StringBuffer() ;
 		buf.append(this.getClass().getName()).append("|").append("findKindById") ;
 		
-		String sql = "select * from kind where id = ? ";
+		Kind kind = super.findByID(table, id, Kind.class) ;
 		
-		List<Kind> list = this.selectList(sql, new Object[] {id}, Kind.class) ;
-		
-		buf.append("|").append(sql)
+		buf.append("|").append("")
 		.append("|").append(id)
-		.append("|").append(list.size())
+		.append("|").append("")
 		.append("|").append(System.currentTimeMillis() - start) ;
 		Logs.info(buf) ;
 		
-		if(list==null || list.size()==0){
-			return new Kind() ;
-		} else {
-			return list.get(0) ;
-		}
+		return kind ;
 	}
 
 	public List<Kind> findKindListByParentId(int parentId) {

@@ -13,9 +13,9 @@ public interface IncomeDao {
 	
 	public int updateIncome(Income income) ;
 	
-	public void deleteIncome(String uid) ;
+	public void deleteIncome(int id) ;
 
-	public Income findIncomeById(String id) ;
+	public Income findIncomeById(int id) ;
 	
 	public List<Income> findIncomeList(String begin,String end,Income income) ;
 	

@@ -20,7 +20,7 @@ public class IncomeServiceImpl implements IncomeService {
 		this.incomeDao = incomeDao;
 	}
 
-	public Income findIncomeById(String id) {
+	public Income findIncomeById(int id) {
 		// TODO Auto-generated method stub
 		return incomeDao.findIncomeById(id);
 	}
