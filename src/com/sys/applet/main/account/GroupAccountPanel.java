@@ -63,13 +63,13 @@ public class GroupAccountPanel extends CommonPanel{
 		imgButton.setText("图表显示");
         imgButton.addActionListener(new ImageActionAdapter());
         
-//    	fieldList.add(new JLabel("名称")) ;
-//    	fieldList.add(titleText) ;
-//    	fieldList.add(new JLabel("价格")) ;
-//    	fieldList.add(moneyText) ;
-//    	fieldList.add(new JLabel("类别")) ;
-//    	fieldList.add(kindBox) ;
-//    	fieldList.add(null) ;
+    	fieldList.add(new JLabel("名称")) ;
+    	fieldList.add(titleText) ;
+    	fieldList.add(new JLabel("价格")) ;
+    	fieldList.add(moneyText) ;
+    	fieldList.add(new JLabel("类别")) ;
+    	fieldList.add(kindBox) ;
+    	fieldList.add(null) ;
     	fieldList.add(new JLabel("时间")) ;
     	fieldList.add(beginTimeText) ;
     	fieldList.add(endTimeText) ;
@@ -89,8 +89,8 @@ public class GroupAccountPanel extends CommonPanel{
         super.printSearchTableModel() ;
         
 //      初始化表数据
-        data = getData(beginDate,endDate, new Account(),"kind") ;
-        TableFactory.freshTableData(table, data) ;
+//        data = getData(beginDate,endDate, new Account(),"kind") ;
+//        TableFactory.freshTableData(table, data) ;
     }
 
     private void submitAction(ActionEvent e) {//查询 显示
@@ -112,6 +112,7 @@ public class GroupAccountPanel extends CommonPanel{
     	if(index>0){
         	Kind kind = kindList.get(index-1) ;
     		acc.setKindid(kind.getUid()) ;
+//    		acc.setKid(kind.getId());
     	}
     	
     	data = getData(begin, end, acc,type) ;

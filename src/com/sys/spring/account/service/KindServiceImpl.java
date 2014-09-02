@@ -32,9 +32,6 @@ public class KindServiceImpl implements KindService {
 	}
 
 	public List<Kind> findKindList(int parentId) {
-		if(parentId==-1){
-			return kindDao.findAllKindList() ;
-		}
 		return kindDao.findKindListByParentId(parentId);
 	}
 	public void deleteKindById(int id) {

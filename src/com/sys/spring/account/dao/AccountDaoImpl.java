@@ -21,7 +21,7 @@ public class AccountDaoImpl extends AbstractDBDao implements AccountDao {
 		StringBuffer buf = new StringBuffer() ;
 		buf.append(this.getClass().getName()).append("|").append("findAccountList") ;
 		
-		StringBuffer sql = new StringBuffer("select * from account where datetime>=? and datetime<=? ") ;
+		StringBuffer sql = new StringBuffer("select * from account where date(datetime)>=? and date(datetime)<=? ") ;
 		
 		ArrayList<Object> params = new ArrayList<Object>() ;
 		params.add(begin) ;
@@ -156,7 +156,7 @@ public class AccountDaoImpl extends AbstractDBDao implements AccountDao {
 		StringBuffer buf = new StringBuffer() ;
 		buf.append(this.getClass().getName()).append("|").append("findAccountTableList") ;
 		
-		StringBuffer sql = new StringBuffer(" from account where datetime>=? and datetime<=? ") ;
+		StringBuffer sql = new StringBuffer(" from account where date(datetime)>=? and date(datetime)<=? ") ;
 		
 		ArrayList<Object> params = new ArrayList<Object>() ;
 		params.add(begin) ;
@@ -191,13 +191,13 @@ public class AccountDaoImpl extends AbstractDBDao implements AccountDao {
 			sql.append(" group by substring(datetime,1,4)") ;
 			presql+= ",'year' type,substring(datetime,1,4) other" ;
 		} else {
-			sql.append(" group by kid") ;
-			presql+= ",'kind' type,kid other" ;
+			sql.append(" group by kindid") ;
+			presql+= ",'kind' type,kindtitle other" ;
 		}
 		
 		sql .append(" order by type ") ;
 		
-		buf.append("|").append(sql) ;
+		buf.append("|").append(presql+sql) ;
 		buf.append("|").append(this.list2String(params)) ;
 		List<AccountTable> list = this.selectList(presql+sql.toString(), params.toArray(), AccountTable.class) ;
 		

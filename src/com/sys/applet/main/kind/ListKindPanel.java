@@ -29,7 +29,7 @@ public class ListKindPanel extends CommonPanel{
 	
 	//  text
 	JComboBox parentBox = new JComboBox();
-	List<String> list = new ArrayList<String>() ;
+	List<Integer> list = new ArrayList<Integer>() ;
 	
 //	table
     List<List<Object>> data = new ArrayList<List<Object>>() ;
@@ -37,11 +37,11 @@ public class ListKindPanel extends CommonPanel{
     public ListKindPanel() {
 //       数据
     	List<Kind> kindList = ConstService.kindService.findKindList(0) ;
-    	list.add("") ;
+    	list.add(0) ;
     	parentBox.addItem("全部") ;
     	for(Kind k:kindList){
     		parentBox.addItem(k.getTitle()) ;
-    		list.add(k.getUid()) ;
+    		list.add(Integer.parseInt(k.getUid())) ;
     	}
 //       按钮  button
     	JButton submitBut = new JButton();
@@ -64,12 +64,12 @@ public class ListKindPanel extends CommonPanel{
         
         super.printSearchTableModel() ;
         
-        data = getData(-1) ;
+        data = getData(0) ;
         TableFactory.freshTableData(table, data) ;
     }
 
     private void submitAction(ActionEvent e) {//查询 显示
-    	int parentId = java.lang.Integer.parseInt(list.get(parentBox.getSelectedIndex())) ;
+    	int parentId = list.get(parentBox.getSelectedIndex()) ;
         data = getData(parentId) ;
 
         TableFactory.freshTableData(table, data) ;
@@ -80,6 +80,9 @@ public class ListKindPanel extends CommonPanel{
     	List<List<Object>> data = new ArrayList<List<Object>>() ;
 //    	查询
     	List<Kind> ulist = ConstService.kindService.findKindList(parentId) ;
+    	if(parentId==0){
+    		ulist = ConstService.kindService.findAllKindList() ;
+    	}
     	
 //    	封装
         if(ulist!=null)

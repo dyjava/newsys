@@ -1,0 +1,291 @@
+    0 INFO  support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@12f6684: display name [org.springframework.context.support.ClassPathXmlApplicationContext@12f6684]; startup date [Tue Sep 02 16:13:20 CST 2014]; root of context hierarchy
+   585 INFO  xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [spring-dao.xml]
+  2291 INFO  xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [spring-service.xml]
+  2339 INFO  support.ClassPathXmlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@12f6684]: org.springframework.beans.factory.support.DefaultListableBeanFactory@120a47e
+  4054 INFO  support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@120a47e: defining beans [dataSource,transactionManager,jdbcTemplate,accountDao,incomeDao,diaryDao,kindDao,userDao,accountService,incomeService,diaryService,kindService,userService]; root of factory hierarchy
+ 55119 INFO  util.Logs - null|SYS|info|2014-09-02 16:14:15||select * from user where 1=1 and username like ?|1|3276
+ 55687 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:14:16|LoginFrame|runBut_actionPerformed|dyong,dyong,|true|3904
+ 64161 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:14:25|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |1|8|37
+ 64249 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:14:25|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |1|8|4
+ 64387 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:14:25|com.sys.spring.account.dao.IncomeDaoImpl|findIncomeList|select * from income where datetime>=? and datetime<=?  order by datetime desc|2014-01-01,2014-09-02,|15|72
+ 64473 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:14:25|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |1|8|3
+ 66587 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:14:27|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |1|8|3
+ 67781 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:14:28|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |1|8|3
+ 67792 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:14:28|com.sys.spring.account.dao.IncomeDaoImpl|findIncomeList|select * from income where datetime>=? and datetime<=?  order by datetime desc|2014-01-01,2014-09-02,|15|7
+ 74241 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:14:35|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|5
+ 74970 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:14:35|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|5
+ 75218 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:14:36|com.sys.spring.account.dao.AccountDaoImpl|findAccountList|select * from account where datetime>=? and datetime<=?  order by datetime desc|2014-09-01,2014-09-02,|0|104
+ 75375 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:14:36|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|4
+ 75540 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:14:36|com.sys.spring.account.dao.AccountDaoImpl|findAccountTableList| from account where datetime>=? and datetime<=?  group by kid order by type |2014-01-01,2014-09-02,|0|45
+ 75548 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:14:36|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|3
+ 75658 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:14:36|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|5
+ 75664 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:14:36|com.sys.spring.account.dao.AccountDaoImpl|findAccountList|select * from account where datetime>=? and datetime<=?  order by datetime desc|2014-09-01,2014-09-02,|0|3
+ 77412 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:14:38|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|5
+ 77421 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:14:38|com.sys.spring.account.dao.AccountDaoImpl|findAccountList|select * from account where datetime>=? and datetime<=?  order by datetime desc|2014-09-01,2014-09-02,|0|3
+ 79507 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:14:40|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|2
+ 79513 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:14:40|com.sys.spring.account.dao.AccountDaoImpl|findAccountTableList| from account where datetime>=? and datetime<=?  group by kid order by type |2014-01-01,2014-09-02,|0|2
+ 80852 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:14:41|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|5
+ 80856 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:14:41|com.sys.spring.account.dao.AccountDaoImpl|findAccountList|select * from account where datetime>=? and datetime<=?  order by datetime desc|2014-09-01,2014-09-02,|0|1
+ 82594 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:14:43|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|2
+ 83929 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:14:44|com.sys.spring.account.dao.DiaryDaoImpl|findDiaryListByUser|select * from diary where userid=?|71b8d0fd-ce76-4ef9-89f3-937e807ce1a3,|23|37
+ 84695 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:14:45|com.sys.spring.account.dao.DiaryDaoImpl|findDiaryListByUser|select * from diary where userid=?|71b8d0fd-ce76-4ef9-89f3-937e807ce1a3,|23|6
+ 87487 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:14:48|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |0|2|5
+ 87562 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:14:48|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |0|2|2
+ 87590 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:14:48|com.sys.spring.account.dao.KindDaoImpl|findAllList|select * from kind||23|3
+ 87591 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:14:48|com.sys.spring.account.dao.KindDaoImpl|findAllKindList|||23|4
+ 87598 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:14:48|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |0|2|2
+ 88986 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:14:49|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |0|2|2
+ 88990 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:14:49|com.sys.spring.account.dao.KindDaoImpl|findAllList|select * from kind||23|3
+ 88991 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:14:49|com.sys.spring.account.dao.KindDaoImpl|findAllKindList|||23|4
+ 100350 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:15:01|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |1|8|3
+ 103952 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:15:04|com.sys.spring.account.dao.KindDaoImpl|findAllList|select * from kind||23|5
+ 103953 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:15:04|com.sys.spring.account.dao.KindDaoImpl|findAllKindList|||23|6
+ 107928 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:15:08|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |1|8|4
+ 188677 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:16:29|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |1|8|5
+ 193269 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:16:34|com.sys.spring.account.dao.KindDaoImpl|findAllList|select * from kind||23|5
+ 193270 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:16:34|com.sys.spring.account.dao.KindDaoImpl|findAllKindList|||23|6
+ 212494 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:16:53|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |1|8|6
+ 250213 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:17:31|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |0|2|2
+ 250217 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:17:31|com.sys.spring.account.dao.KindDaoImpl|findAllList|select * from kind||23|2
+ 250219 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:17:31|com.sys.spring.account.dao.KindDaoImpl|findAllKindList|||23|4
+ 401013 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:20:01|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |0|2|2
+ 402084 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:20:02|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |0|2|3
+ 402089 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:20:02|com.sys.spring.account.dao.KindDaoImpl|findAllList|select * from kind||23|2
+ 402090 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:20:02|com.sys.spring.account.dao.KindDaoImpl|findAllKindList|||23|3
+ 406091 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:20:06|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |1|8|3
+ 409477 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:20:10|com.sys.spring.account.dao.KindDaoImpl|findAllList|select * from kind||23|5
+ 409478 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:20:10|com.sys.spring.account.dao.KindDaoImpl|findAllKindList|||23|6
+ 410955 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:20:11|com.sys.spring.account.dao.KindDaoImpl|findAllList|select * from kind||23|3
+ 410956 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:20:11|com.sys.spring.account.dao.KindDaoImpl|findAllKindList|||23|4
+ 415838 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:20:16||select * from user where 1=1|3|2
+ 415860 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:20:16||select * from user where id = ? |6|19
+ 417190 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:20:18||select * from user where 1=1|3|2
+ 422659 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:20:23||select * from user where 1=1|3|2
+ 425801 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:20:26||select * from user where id = ? |1|2
+ 427298 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:20:28||select * from user where 1=1|3|4
+ 430476 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:20:31|com.sys.spring.account.dao.DiaryDaoImpl|findDiaryListByUser|select * from diary where userid=?|71b8d0fd-ce76-4ef9-89f3-937e807ce1a3,|23|4
+ 431532 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:20:32|com.sys.spring.account.dao.DiaryDaoImpl|findDiaryListByUser|select * from diary where userid=?|71b8d0fd-ce76-4ef9-89f3-937e807ce1a3,|23|4
+ 433144 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:20:34|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |1|8|5
+ 433158 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:20:34|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |1|8|2
+ 433163 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:20:34|com.sys.spring.account.dao.IncomeDaoImpl|findIncomeList|select * from income where datetime>=? and datetime<=?  order by datetime desc|2014-01-01,2014-09-02,|15|3
+ 433171 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:20:34|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |1|8|4
+ 434391 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:20:35|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |1|8|3
+ 434400 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:20:35|com.sys.spring.account.dao.IncomeDaoImpl|findIncomeList|select * from income where datetime>=? and datetime<=?  order by datetime desc|2014-01-01,2014-09-02,|15|5
+ 438467 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:20:39|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|3
+ 438479 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:20:39|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|3
+ 438486 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:20:39|com.sys.spring.account.dao.AccountDaoImpl|findAccountList|select * from account where datetime>=? and datetime<=?  order by datetime desc|2014-09-01,2014-09-02,|0|4
+ 438500 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:20:39|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|3
+ 438505 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:20:39|com.sys.spring.account.dao.AccountDaoImpl|findAccountTableList| from account where datetime>=? and datetime<=?  group by kid order by type |2014-01-01,2014-09-02,|0|2
+ 438511 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:20:39|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|2
+ 439698 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:20:40|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|2
+ 439702 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:20:40|com.sys.spring.account.dao.AccountDaoImpl|findAccountList|select * from account where datetime>=? and datetime<=?  order by datetime desc|2014-09-01,2014-09-02,|0|2
+     0 INFO  support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@12f6684: display name [org.springframework.context.support.ClassPathXmlApplicationContext@12f6684]; startup date [Tue Sep 02 16:27:43 CST 2014]; root of context hierarchy
+    82 INFO  xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [spring-dao.xml]
+   229 INFO  xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [spring-service.xml]
+   245 INFO  support.ClassPathXmlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@12f6684]: org.springframework.beans.factory.support.DefaultListableBeanFactory@b82368
+   282 INFO  support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@b82368: defining beans [dataSource,transactionManager,jdbcTemplate,accountDao,incomeDao,diaryDao,kindDao,userDao,accountService,incomeService,diaryService,kindService,userService]; root of factory hierarchy
+  6032 INFO  util.Logs - null|SYS|info|2014-09-02 16:27:50||select * from user where 1=1 and username like ?|1|534
+  6202 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:27:50|LoginFrame|runBut_actionPerformed|dyong,dyong,|true|704
+  7566 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:27:51||select * from user where 1=1|3|2
+  7576 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:27:51||select * from user where id = ? |6|2
+  8554 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:27:52|com.sys.spring.account.dao.KindDaoImpl|findAllList|select * from kind||23|6
+  8555 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:27:52|com.sys.spring.account.dao.KindDaoImpl|findAllKindList|||23|7
+  8570 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:27:52|com.sys.spring.account.dao.KindDaoImpl|findAllList|select * from kind||23|3
+  8571 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:27:52|com.sys.spring.account.dao.KindDaoImpl|findAllKindList|||23|4
+  8577 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:27:52|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|2
+  8585 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:27:52|com.sys.spring.account.dao.KindDaoImpl|findAllList|select * from kind||23|2
+  8586 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:27:52|com.sys.spring.account.dao.KindDaoImpl|findAllKindList|||23|3
+  9946 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:27:53|com.sys.spring.account.dao.KindDaoImpl|findAllList|select * from kind||23|4
+  9948 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:27:53|com.sys.spring.account.dao.KindDaoImpl|findAllKindList|||23|6
+  9955 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:27:53|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|4
+ 12810 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:27:56|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |1|8|3
+ 16839 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:28:00|com.sys.spring.account.dao.KindDaoImpl|findAllList|select * from kind||23|2
+ 16840 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:28:00|com.sys.spring.account.dao.KindDaoImpl|findAllKindList|||23|3
+ 16849 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:28:00|com.sys.spring.account.dao.KindDaoImpl|findAllList|select * from kind||23|3
+ 16850 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:28:00|com.sys.spring.account.dao.KindDaoImpl|findAllKindList|||23|4
+ 16855 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:28:00|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|3
+ 16864 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:28:00|com.sys.spring.account.dao.KindDaoImpl|findAllList|select * from kind||23|3
+ 16865 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:28:00|com.sys.spring.account.dao.KindDaoImpl|findAllKindList|||23|4
+ 17986 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:28:01|com.sys.spring.account.dao.KindDaoImpl|findAllList|select * from kind||23|3
+ 17987 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:28:01|com.sys.spring.account.dao.KindDaoImpl|findAllKindList|||23|3
+ 17992 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:28:01|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|3
+ 25228 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:28:09|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |1|8|5
+ 28233 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:28:12|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |2|0|2
+ 35724 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:28:19|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |2|0|4
+     0 INFO  support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@f38798: display name [org.springframework.context.support.ClassPathXmlApplicationContext@f38798]; startup date [Tue Sep 02 16:31:00 CST 2014]; root of context hierarchy
+    78 INFO  xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [spring-dao.xml]
+   205 INFO  xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [spring-service.xml]
+   218 INFO  support.ClassPathXmlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@f38798]: org.springframework.beans.factory.support.DefaultListableBeanFactory@11c8a71
+   254 INFO  support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@11c8a71: defining beans [dataSource,transactionManager,jdbcTemplate,accountDao,incomeDao,diaryDao,kindDao,userDao,accountService,incomeService,diaryService,kindService,userService]; root of factory hierarchy
+  5969 INFO  util.Logs - null|SYS|info|2014-09-02 16:31:06||select * from user where 1=1 and username like ?|1|488
+  6135 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:31:06|LoginFrame|runBut_actionPerformed|dyong,dyong,|true|655
+  7360 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:31:07||select * from user where 1=1|3|2
+  7370 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:31:07||select * from user where id = ? |6|2
+  9578 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:31:09|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |0|2|3
+  9590 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:31:09|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |0|2|1
+  9598 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:31:09|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|3
+  9606 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:31:09|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |0|2|3
+ 10545 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:31:10|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |0|2|3
+ 10552 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:31:10|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|3
+ 13348 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:31:13|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |1|8|2
+ 15927 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:31:16|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|5
+ 19318 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:31:19|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |0|2|3
+ 178827 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:33:59||select * from user where 1=1|3|2
+ 178836 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:33:59||select * from user where id = ? |6|3
+ 179979 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:34:00||select * from user where 1=1|3|2
+ 182481 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:34:02|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |1|8|5
+ 182496 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:34:02|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |1|8|2
+ 182506 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:34:02|com.sys.spring.account.dao.IncomeDaoImpl|findIncomeList|select * from income where datetime>=? and datetime<=?  order by datetime desc|2014-01-01,2014-09-02,|15|6
+ 182516 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:34:02|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |1|8|3
+ 183665 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:34:03|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |1|8|4
+ 183676 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:34:03|com.sys.spring.account.dao.IncomeDaoImpl|findIncomeList|select * from income where datetime>=? and datetime<=?  order by datetime desc|2014-01-01,2014-09-02,|15|7
+ 187237 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:34:07|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|4
+ 187254 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:34:07|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|2
+ 187260 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:34:07|com.sys.spring.account.dao.AccountDaoImpl|findAccountList|select * from account where datetime>=? and datetime<=?  order by datetime desc|2014-09-01,2014-09-02,|0|2
+ 187274 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:34:07|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|2
+ 187281 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:34:07|com.sys.spring.account.dao.AccountDaoImpl|findAccountTableList| from account where datetime>=? and datetime<=?  group by kid order by type |2014-01-01,2014-09-02,|0|3
+ 187288 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:34:07|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|2
+ 188208 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:34:08|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|5
+ 188213 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:34:08|com.sys.spring.account.dao.AccountDaoImpl|findAccountList|select * from account where datetime>=? and datetime<=?  order by datetime desc|2014-09-01,2014-09-02,|0|2
+ 193584 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:34:13|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|4
+ 193593 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:34:13|com.sys.spring.account.dao.AccountDaoImpl|findAccountList|select * from account where datetime>=? and datetime<=?  order by datetime desc|2014-09-01,2014-09-02,|0|5
+     0 INFO  support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@f38798: display name [org.springframework.context.support.ClassPathXmlApplicationContext@f38798]; startup date [Tue Sep 02 16:36:20 CST 2014]; root of context hierarchy
+    82 INFO  xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [spring-dao.xml]
+   208 INFO  xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [spring-service.xml]
+   220 INFO  support.ClassPathXmlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@f38798]: org.springframework.beans.factory.support.DefaultListableBeanFactory@11c8a71
+   257 INFO  support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@11c8a71: defining beans [dataSource,transactionManager,jdbcTemplate,accountDao,incomeDao,diaryDao,kindDao,userDao,accountService,incomeService,diaryService,kindService,userService]; root of factory hierarchy
+  4014 INFO  util.Logs - null|SYS|info|2014-09-02 16:36:24||select * from user where 1=1 and username like ?|1|498
+  4201 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:36:25|LoginFrame|runBut_actionPerformed|dyong,dyong,|true|686
+  5320 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:36:26||select * from user where 1=1|3|2
+  5326 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:36:26||select * from user where id = ? |6|2
+  6621 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:36:27|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|3
+  6636 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:36:27|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|3
+  6878 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:36:27|com.sys.spring.account.dao.AccountDaoImpl|findAccountList|select * from account where date(datetime)>=? and date(datetime)<=?  order by datetime desc|2014-09-01,2014-09-02,|0|232
+  6898 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:36:27|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|5
+  6906 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:36:27|com.sys.spring.account.dao.AccountDaoImpl|findAccountTableList| from account where date(datetime)>=? and date(datetime)<=?  group by kid order by type |2014-01-01,2014-09-02,|0|3
+  6917 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:36:27|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|3
+  7713 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:36:28|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|2
+  7718 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:36:28|com.sys.spring.account.dao.AccountDaoImpl|findAccountList|select * from account where date(datetime)>=? and date(datetime)<=?  order by datetime desc|2014-09-01,2014-09-02,|0|2
+  9262 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:36:30|com.sys.spring.account.dao.AccountDaoImpl|findAccountList|select * from account where date(datetime)>=? and date(datetime)<=?  order by datetime desc|2014-09-01,2014-09-02,|0|2
+ 14039 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:36:35|com.sys.spring.account.dao.AccountDaoImpl|findAccountList|select * from account where date(datetime)>=? and date(datetime)<=?  order by datetime desc|2014-09-01,2014-09-02,|0|3
+ 26087 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:36:47|com.sys.spring.account.dao.AccountDaoImpl|findAccountList|select * from account where date(datetime)>=? and date(datetime)<=?  order by datetime desc|2014-08-01,2014-09-02,|0|2
+ 28480 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:36:49|com.sys.spring.account.dao.AccountDaoImpl|findAccountList|select * from account where date(datetime)>=? and date(datetime)<=?  order by datetime desc|2014-08-01,2014-09-02,|0|3
+ 394442 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:42:55|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|4
+ 394684 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:42:55|com.sys.spring.account.dao.AccountDaoImpl|findAccountTableList| from account where date(datetime)>=? and date(datetime)<=?  group by kid order by type |2014-01-01,2014-09-02,|0|239
+ 395821 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:42:56|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |1|8|3
+ 395833 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:42:56|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |1|8|3
+ 395842 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:42:56|com.sys.spring.account.dao.IncomeDaoImpl|findIncomeList|select * from income where datetime>=? and datetime<=?  order by datetime desc|2014-01-01,2014-09-02,|15|4
+ 395852 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:42:56|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |1|8|3
+ 397198 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:42:58|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |1|8|3
+ 397206 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:42:58|com.sys.spring.account.dao.IncomeDaoImpl|findIncomeList|select * from income where datetime>=? and datetime<=?  order by datetime desc|2014-01-01,2014-09-02,|15|4
+ 398280 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:42:59|com.sys.spring.account.dao.DiaryDaoImpl|findDiaryListByUser|select * from diary where userid=?|71b8d0fd-ce76-4ef9-89f3-937e807ce1a3,|23|6
+ 399280 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:43:00|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |0|2|2
+ 399292 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:43:00|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |0|2|2
+ 399298 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:43:00|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |0|2|1
+ 399301 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:43:00|com.sys.spring.account.dao.KindDaoImpl|findAllList|select * from kind||23|3
+ 399302 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:43:00|com.sys.spring.account.dao.KindDaoImpl|findAllKindList|||23|4
+ 399309 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:43:00|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |0|2|2
+ 399921 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:43:00||select * from user where 1=1|3|2
+ 399928 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:43:00||select * from user where id = ? |6|2
+     0 INFO  support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@12f6684: display name [org.springframework.context.support.ClassPathXmlApplicationContext@12f6684]; startup date [Tue Sep 02 16:53:29 CST 2014]; root of context hierarchy
+   100 INFO  xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [spring-dao.xml]
+   240 INFO  xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [spring-service.xml]
+   252 INFO  support.ClassPathXmlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@12f6684]: org.springframework.beans.factory.support.DefaultListableBeanFactory@b82368
+   288 INFO  support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@b82368: defining beans [dataSource,transactionManager,jdbcTemplate,accountDao,incomeDao,diaryDao,kindDao,userDao,accountService,incomeService,diaryService,kindService,userService]; root of factory hierarchy
+  5992 INFO  util.Logs - null|SYS|info|2014-09-02 16:53:35||select * from user where 1=1 and username like ?|1|746
+  6156 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:53:36|LoginFrame|runBut_actionPerformed|dyong,dyong,|true|912
+  7279 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:53:37|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |1|8|4
+  7292 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:53:37|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |1|8|2
+  7303 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:53:37|com.sys.spring.account.dao.IncomeDaoImpl|findIncomeList|select * from income where datetime>=? and datetime<=?  order by datetime desc|2014-01-01,2014-09-02,|0|2
+  7329 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:53:37|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |1|8|3
+  8366 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:53:38|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|4
+  8386 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:53:38|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|4
+  8406 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:53:38|com.sys.spring.account.dao.AccountDaoImpl|findAccountList|select * from account where date(datetime)>=? and date(datetime)<=?  order by datetime desc|2014-09-01,2014-09-02,|0|15
+  8419 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:53:38|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|3
+  8668 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:53:38|com.sys.spring.account.dao.AccountDaoImpl|findAccountTableList| from account where date(datetime)>=? and date(datetime)<=?  group by kid order by type |2014-01-01,2014-09-02,|1|244
+  8680 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:53:38|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|2
+ 10086 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:53:40|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|4
+ 10106 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:53:40|com.sys.spring.account.dao.AccountDaoImpl|findAccountList|select * from account where date(datetime)>=? and date(datetime)<=?  order by datetime desc|2014-09-01,2014-09-02,|0|16
+ 14182 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:53:44|com.sys.spring.account.dao.AccountDaoImpl|findAccountList|select * from account where date(datetime)>=? and date(datetime)<=?  order by datetime desc|2014-03-01,2014-09-02,|981|358
+ 24868 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:53:54|com.sys.spring.account.dao.AccountDaoImpl|findAccountList|select * from account where date(datetime)>=? and date(datetime)<=?  and money>? order by datetime desc|2014-03-01,2014-09-02,134.0,|48|27
+ 29057 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:53:58|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|3
+ 29073 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:53:58|com.sys.spring.account.dao.AccountDaoImpl|findAccountTableList| from account where date(datetime)>=? and date(datetime)<=?  group by kid order by type |2014-01-01,2014-09-02,|1|12
+ 32448 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:54:02|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|4
+ 32472 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:54:02|com.sys.spring.account.dao.AccountDaoImpl|findAccountTableList| from account where date(datetime)>=? and date(datetime)<=?  group by kid order by type |2014-01-01,2014-09-02,|1|19
+ 65951 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:54:35|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|4
+ 65969 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:54:35|com.sys.spring.account.dao.AccountDaoImpl|findAccountTableList| from account where date(datetime)>=? and date(datetime)<=?  group by kid order by type |2014-01-01,2014-09-02,|1|13
+ 137678 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:55:47|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|3
+ 137696 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:55:47|com.sys.spring.account.dao.AccountDaoImpl|findAccountTableList| from account where date(datetime)>=? and date(datetime)<=?  group by kid order by type |2014-01-01,2014-09-02,|1|15
+ 194708 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:56:44|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|3
+ 195781 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:56:45|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|3
+ 195808 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:56:45|com.sys.spring.account.dao.AccountDaoImpl|findAccountTableList| from account where date(datetime)>=? and date(datetime)<=?  group by kid order by type |2014-01-01,2014-09-02,|1|21
+ 233375 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:57:23|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|3
+ 233390 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:57:23|com.sys.spring.account.dao.AccountDaoImpl|findAccountTableList| from account where date(datetime)>=? and date(datetime)<=?  group by kid order by type |2014-01-01,2014-09-02,|1|13
+     0 INFO  support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@12f6684: display name [org.springframework.context.support.ClassPathXmlApplicationContext@12f6684]; startup date [Tue Sep 02 16:57:38 CST 2014]; root of context hierarchy
+    79 INFO  xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [spring-dao.xml]
+   209 INFO  xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [spring-service.xml]
+   224 INFO  support.ClassPathXmlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@12f6684]: org.springframework.beans.factory.support.DefaultListableBeanFactory@b82368
+   266 INFO  support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@b82368: defining beans [dataSource,transactionManager,jdbcTemplate,accountDao,incomeDao,diaryDao,kindDao,userDao,accountService,incomeService,diaryService,kindService,userService]; root of factory hierarchy
+  4280 INFO  util.Logs - null|SYS|info|2014-09-02 16:57:42||select * from user where 1=1 and username like ?|1|489
+  4460 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:57:42|LoginFrame|runBut_actionPerformed|dyong,dyong,|true|670
+  5626 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:57:43|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|3
+  5640 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:57:43|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|3
+  5664 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:57:43|com.sys.spring.account.dao.AccountDaoImpl|findAccountList|select * from account where date(datetime)>=? and date(datetime)<=?  order by datetime desc|2014-09-01,2014-09-02,|0|15
+  5678 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:57:43|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|3
+  5710 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:57:43|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|2
+  6710 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:57:44|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|2
+ 14936 INFO  util.Logs - 邸永|SYS|info|2014-09-02 16:57:53|com.sys.spring.account.dao.AccountDaoImpl|findAccountTableList| from account where date(datetime)>=? and date(datetime)<=?  group by kid order by type |2014-01-01,2014-09-02,|1|23
+     0 INFO  support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@12f6684: display name [org.springframework.context.support.ClassPathXmlApplicationContext@12f6684]; startup date [Tue Sep 02 17:00:13 CST 2014]; root of context hierarchy
+    80 INFO  xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [spring-dao.xml]
+   207 INFO  xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [spring-service.xml]
+   225 INFO  support.ClassPathXmlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@12f6684]: org.springframework.beans.factory.support.DefaultListableBeanFactory@b82368
+   265 INFO  support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@b82368: defining beans [dataSource,transactionManager,jdbcTemplate,accountDao,incomeDao,diaryDao,kindDao,userDao,accountService,incomeService,diaryService,kindService,userService]; root of factory hierarchy
+  5249 INFO  util.Logs - null|SYS|info|2014-09-02 17:00:18||select * from user where 1=1 and username like ?|1|516
+  5398 INFO  util.Logs - 邸永|SYS|info|2014-09-02 17:00:18|LoginFrame|runBut_actionPerformed|dyong,dyong,|true|666
+  6315 INFO  util.Logs - 邸永|SYS|info|2014-09-02 17:00:19|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|3
+  6332 INFO  util.Logs - 邸永|SYS|info|2014-09-02 17:00:19|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|4
+  6355 INFO  util.Logs - 邸永|SYS|info|2014-09-02 17:00:19|com.sys.spring.account.dao.AccountDaoImpl|findAccountList|select * from account where date(datetime)>=? and date(datetime)<=?  order by datetime desc|2014-09-01,2014-09-02,|0|14
+  6372 INFO  util.Logs - 邸永|SYS|info|2014-09-02 17:00:19|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|4
+  6403 INFO  util.Logs - 邸永|SYS|info|2014-09-02 17:00:19|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|3
+  7535 INFO  util.Logs - 邸永|SYS|info|2014-09-02 17:00:20|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|3
+ 11851 INFO  util.Logs - 邸永|SYS|info|2014-09-02 17:00:25|com.sys.spring.account.dao.AccountDaoImpl|findAccountTableList| from account where date(datetime)>=? and date(datetime)<=?  group by substring(datetime,1,4) order by type |2014-01-01,2014-09-02,|1|292
+ 17956 INFO  util.Logs - 邸永|SYS|info|2014-09-02 17:00:31|com.sys.spring.account.dao.AccountDaoImpl|findAccountTableList| from account where date(datetime)>=? and date(datetime)<=?  group by substring(datetime,1,7) order by type |2014-01-01,2014-09-02,|8|28
+ 22524 INFO  util.Logs - 邸永|SYS|info|2014-09-02 17:00:35|com.sys.spring.account.dao.AccountDaoImpl|findAccountTableList| from account where date(datetime)>=? and date(datetime)<=?  group by substring(datetime,1,10) order by type |2014-01-01,2014-09-02,|205|44
+ 104928 INFO  util.Logs - 邸永|SYS|info|2014-09-02 17:01:58|com.sys.spring.account.dao.AccountDaoImpl|findAccountTableList| from account where date(datetime)>=? and date(datetime)<=?  group by kid order by type |2014-01-01,2014-09-02,|1|13
+     0 INFO  support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@12f6684: display name [org.springframework.context.support.ClassPathXmlApplicationContext@12f6684]; startup date [Tue Sep 02 17:07:33 CST 2014]; root of context hierarchy
+    77 INFO  xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [spring-dao.xml]
+   203 INFO  xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [spring-service.xml]
+   222 INFO  support.ClassPathXmlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@12f6684]: org.springframework.beans.factory.support.DefaultListableBeanFactory@b82368
+   261 INFO  support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@b82368: defining beans [dataSource,transactionManager,jdbcTemplate,accountDao,incomeDao,diaryDao,kindDao,userDao,accountService,incomeService,diaryService,kindService,userService]; root of factory hierarchy
+  4288 INFO  util.Logs - null|SYS|info|2014-09-02 17:07:38||select * from user where 1=1 and username like ?|1|509
+  4508 INFO  util.Logs - 邸永|SYS|info|2014-09-02 17:07:38|LoginFrame|runBut_actionPerformed|dyong,dyong,|true|731
+  5768 INFO  util.Logs - 邸永|SYS|info|2014-09-02 17:07:39|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|3
+  5781 INFO  util.Logs - 邸永|SYS|info|2014-09-02 17:07:39|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|2
+  5805 INFO  util.Logs - 邸永|SYS|info|2014-09-02 17:07:39|com.sys.spring.account.dao.AccountDaoImpl|findAccountList|select * from account where date(datetime)>=? and date(datetime)<=?  order by datetime desc|2014-09-01,2014-09-02,|0|15
+  5823 INFO  util.Logs - 邸永|SYS|info|2014-09-02 17:07:39|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|5
+  5854 INFO  util.Logs - 邸永|SYS|info|2014-09-02 17:07:39|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|2
+  6709 INFO  util.Logs - 邸永|SYS|info|2014-09-02 17:07:40|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|3
+ 20807 INFO  util.Logs - 邸永|SYS|info|2014-09-02 17:07:54|com.sys.spring.account.dao.AccountDaoImpl|findAccountTableList|select count(*) countNum,sum(money) money,'kind' type,kid other from account where date(datetime)>=? and date(datetime)<=?  and kid=? and kindid=? group by kid order by type |2014-01-01,2014-09-02,5,99fcfb5e-7b00-481c-98ac-a128c0f02fc4,|0|10
+ 22597 INFO  util.Logs - 邸永|SYS|info|2014-09-02 17:07:56|com.sys.spring.account.dao.AccountDaoImpl|findAccountTableList|select count(*) countNum,sum(money) money,'kind' type,kid other from account where date(datetime)>=? and date(datetime)<=?  and kid=? and kindid=? group by kid order by type |2014-01-01,2014-09-02,5,99fcfb5e-7b00-481c-98ac-a128c0f02fc4,|0|17
+ 30735 INFO  util.Logs - 邸永|SYS|info|2014-09-02 17:08:04|com.sys.spring.account.dao.AccountDaoImpl|findAccountTableList|select count(*) countNum,sum(money) money,'kind' type,kid other from account where date(datetime)>=? and date(datetime)<=?  and kid=? and kindid=? group by kid order by type |2014-01-01,2014-09-02,5,99fcfb5e-7b00-481c-98ac-a128c0f02fc4,|0|11
+     0 INFO  support.ClassPathXmlApplicationContext - Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@12f6684: display name [org.springframework.context.support.ClassPathXmlApplicationContext@12f6684]; startup date [Tue Sep 02 17:12:07 CST 2014]; root of context hierarchy
+    74 INFO  xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [spring-dao.xml]
+   206 INFO  xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [spring-service.xml]
+   225 INFO  support.ClassPathXmlApplicationContext - Bean factory for application context [org.springframework.context.support.ClassPathXmlApplicationContext@12f6684]: org.springframework.beans.factory.support.DefaultListableBeanFactory@b82368
+   260 INFO  support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@b82368: defining beans [dataSource,transactionManager,jdbcTemplate,accountDao,incomeDao,diaryDao,kindDao,userDao,accountService,incomeService,diaryService,kindService,userService]; root of factory hierarchy
+  4022 INFO  util.Logs - null|SYS|info|2014-09-02 17:12:11||select * from user where 1=1 and username like ?|1|486
+  4165 INFO  util.Logs - 邸永|SYS|info|2014-09-02 17:12:11|LoginFrame|runBut_actionPerformed|dyong,dyong,|true|630
+  5377 INFO  util.Logs - 邸永|SYS|info|2014-09-02 17:12:12|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|3
+  5391 INFO  util.Logs - 邸永|SYS|info|2014-09-02 17:12:12|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|3
+  5415 INFO  util.Logs - 邸永|SYS|info|2014-09-02 17:12:12|com.sys.spring.account.dao.AccountDaoImpl|findAccountList|select * from account where date(datetime)>=? and date(datetime)<=?  order by datetime desc|2014-09-01,2014-09-02,|0|15
+  5430 INFO  util.Logs - 邸永|SYS|info|2014-09-02 17:12:12|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|4
+  5465 INFO  util.Logs - 邸永|SYS|info|2014-09-02 17:12:12|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|3
+  7327 INFO  util.Logs - 邸永|SYS|info|2014-09-02 17:12:14|com.sys.spring.account.dao.KindDaoImpl|findKindListByParentId|select * from kind where parentId = ? |-1|13|4
+  9765 INFO  util.Logs - 邸永|SYS|info|2014-09-02 17:12:17|com.sys.spring.account.dao.AccountDaoImpl|findAccountTableList|select count(*) countNum,sum(money) money,'kind' type,kindtitle other from account where date(datetime)>=? and date(datetime)<=?  group by kindid order by type |2014-01-01,2014-09-02,|13|36
+ 15385 INFO  util.Logs - 邸永|SYS|info|2014-09-02 17:12:22|com.sys.spring.account.dao.AccountDaoImpl|findAccountTableList|select count(*) countNum,sum(money) money,'year' type,substring(datetime,1,4) other from account where date(datetime)>=? and date(datetime)<=?  group by substring(datetime,1,4) order by type |2014-01-01,2014-09-02,|1|23
+ 20138 INFO  util.Logs - 邸永|SYS|info|2014-09-02 17:12:27|com.sys.spring.account.dao.AccountDaoImpl|findAccountTableList|select count(*) countNum,sum(money) money,'month' type,substring(datetime,1,7) other from account where date(datetime)>=? and date(datetime)<=?  group by substring(datetime,1,7) order by type |2014-01-01,2014-09-02,|8|25
+ 24241 INFO  util.Logs - 邸永|SYS|info|2014-09-02 17:12:31|com.sys.spring.account.dao.AccountDaoImpl|findAccountTableList|select count(*) countNum,sum(money) money,'day' type,substring(datetime,1,10) other from account where date(datetime)>=? and date(datetime)<=?  group by substring(datetime,1,10) order by type |2014-01-01,2014-09-02,|205|294
+ 33022 INFO  util.Logs - 邸永|SYS|info|2014-09-02 17:12:40|com.sys.spring.account.dao.AccountDaoImpl|findAccountTableList|select count(*) countNum,sum(money) money,'day' type,substring(datetime,1,10) other from account where date(datetime)>=? and date(datetime)<=?  and kid=? and kindid=? group by substring(datetime,1,10) order by type |2014-01-01,2014-09-02,5,99fcfb5e-7b00-481c-98ac-a128c0f02fc4,|0|11
+ 36117 INFO  util.Logs - 邸永|SYS|info|2014-09-02 17:12:43|com.sys.spring.account.dao.AccountDaoImpl|findAccountTableList|select count(*) countNum,sum(money) money,'kind' type,kindtitle other from account where date(datetime)>=? and date(datetime)<=?  and kid=? and kindid=? group by kindid order by type |2014-01-01,2014-09-02,5,99fcfb5e-7b00-481c-98ac-a128c0f02fc4,|0|11
+ 44115 INFO  util.Logs - 邸永|SYS|info|2014-09-02 17:12:51|com.sys.spring.account.dao.AccountDaoImpl|findAccountTableList|select count(*) countNum,sum(money) money,'kind' type,kindtitle other from account where date(datetime)>=? and date(datetime)<=?  and kid=? and kindid=? group by kindid order by type |2014-01-01,2014-09-02,5,99fcfb5e-7b00-481c-98ac-a128c0f02fc4,|0|9
+ 
