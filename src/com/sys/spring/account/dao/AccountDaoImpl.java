@@ -183,19 +183,19 @@ public class AccountDaoImpl extends AbstractDBDao implements AccountDao {
 		//
 		if(type.equals("day")){
 			sql.append(" group by substring(datetime,1,10)") ;
-			presql+= ",'day' type,substring(datetime,1,10) other" ;
+			presql+= ",'day' other,substring(datetime,1,10) type" ;
 		} else if(type.equals("month")){
 			sql.append(" group by substring(datetime,1,7)") ;
-			presql+= ",'month' type,substring(datetime,1,7) other" ;
+			presql+= ",'month' other,substring(datetime,1,7) type" ;
 		} else if(type.equals("year")){
 			sql.append(" group by substring(datetime,1,4)") ;
-			presql+= ",'year' type,substring(datetime,1,4) other" ;
+			presql+= ",'year' other,substring(datetime,1,4) type" ;
 		} else {
 			sql.append(" group by kindid") ;
-			presql+= ",'kind' type,kindtitle other" ;
+			presql+= ",'kind' other,kindtitle type" ;
 		}
 		
-		sql .append(" order by type ") ;
+		sql .append(" order by other ") ;
 		
 		buf.append("|").append(presql+sql) ;
 		buf.append("|").append(this.list2String(params)) ;

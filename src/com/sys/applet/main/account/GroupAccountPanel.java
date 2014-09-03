@@ -1,5 +1,6 @@
 package com.sys.applet.main.account;
 
+import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
@@ -10,7 +11,9 @@ import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JTextField;
+import javax.swing.ListCellRenderer;
 
 import com.sys.applet.ConstService;
 import com.sys.applet.main.CommonPanel;
@@ -44,6 +47,9 @@ public class GroupAccountPanel extends CommonPanel{
         for(Kind k:kindList){
         	kindBox.addItem(k.getTitle()) ;
         }
+        kindBox.setRenderer(new ACellRenderer());
+        kindBox.setMaximumRowCount(10);
+        
         String beginDate = new SimpleDateFormat("yyyy-").format(new Date()) +"01-01" ;
         beginTimeText.setText(beginDate) ;
         String endDate = new SimpleDateFormat("yyyy-MM-dd").format(new Date()) ;
@@ -180,5 +186,28 @@ public class GroupAccountPanel extends CommonPanel{
         public void actionPerformed(ActionEvent e) {
             submitAction(e);
         }
+    }
+    class ACellRenderer extends JLabel implements ListCellRenderer{
+    	/**
+		 * 
+		 */
+		private static final long serialVersionUID = -4919338275462886925L;
+		ACellRenderer(){
+    		setOpaque(true);
+    	}
+    	public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus){
+    		if (value!=null){
+    	      setText(value.toString());
+//    	      setIcon(new ImageIcon(".\\icons\\fruit"+(index+1)+".jpg"));
+    	    }
+    	    if (isSelected){
+    	       setBackground(list.getSelectionBackground());
+    	       setForeground(list.getSelectionForeground());
+    	    }else{
+    	       setBackground(list.getBackground());
+    	       setForeground(list.getForeground());
+    	    }
+    	    return this;
+    	}
     }
 }
