@@ -14,7 +14,7 @@ public class UserTree extends TreePanel {
 	public UserTree() {
 		JButton registerButton = new JButton() ;
 		JButton listButton = new JButton() ;
-		JButton updateButton = new JButton() ;
+//		JButton updateButton = new JButton() ;
 		JButton updatepwdButton = new JButton() ;
 		
     	registerButton.setText("用户注册");

@@ -15,7 +15,7 @@
    private static final long serialVersionUID = 200L;
    int width;
    int height;
-   Hashtable info = new Hashtable();
+   Hashtable<Object,Object> info = new Hashtable<Object,Object>();
    static final XYConstraints defaultConstraints = new XYConstraints();
  
    public XYLayout()

@@ -14,6 +14,7 @@ import javax.swing.JTextField;
 
 import com.sys.applet.ConstService;
 import com.sys.applet.main.CommonPanel;
+import com.sys.applet.util.DateChooserJTextField;
 import com.sys.spring.account.domain.Account;
 import com.sys.spring.account.domain.Kind;
 import com.sys.spring.user.domain.User;
@@ -31,7 +32,7 @@ public class AddAccountPanel extends CommonPanel{
     JTextField titleText = new JTextField();
     JTextField moneyText = new JTextField();
     JComboBox kindBox = new JComboBox();
-    JTextField timeText = new JTextField();
+    JTextField timeText = new DateChooserJTextField();
     private List<Kind> kindList ;
     
     public AddAccountPanel() {
@@ -47,6 +48,7 @@ public class AddAccountPanel extends CommonPanel{
         	kindBox.addItem(k.getTitle()) ;
         }
         timeText.setText(new SimpleDateFormat("yyyy-MM-dd").format(new Date())) ;
+
         fieldList.add(titleText) ;
         fieldList.add(moneyText) ;
         fieldList.add(kindBox) ;
@@ -59,6 +61,7 @@ public class AddAccountPanel extends CommonPanel{
         
         submitBut.setText("提交");
         submitBut.addActionListener(new SubmitButtonActionAdapter());
+        
         cancleBut.setText("取消");
         cancleBut.addActionListener(new CancelButtonActionAdapter());
         buttonList.add(submitBut) ;

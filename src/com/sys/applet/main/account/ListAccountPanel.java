@@ -17,6 +17,7 @@ import javax.swing.JTextField;
 
 import com.sys.applet.ConstService;
 import com.sys.applet.main.CommonPanel;
+import com.sys.applet.util.DateChooserJTextField;
 import com.sys.applet.util.DoubleUtil;
 import com.sys.applet.util.TableFactory;
 import com.sys.spring.account.domain.Account;
@@ -31,8 +32,8 @@ public class ListAccountPanel extends CommonPanel{
 	JTextField titleText = new JTextField() ;
 	JTextField moneyText = new JTextField() ;
 	JComboBox kindBox = new JComboBox();
-    JTextField beginTimeText = new JTextField();
-    JTextField endTimeText = new JTextField();
+    JTextField beginTimeText = new DateChooserJTextField();
+    JTextField endTimeText = new DateChooserJTextField();
     private List<Kind> kindList ;
     
 //	table

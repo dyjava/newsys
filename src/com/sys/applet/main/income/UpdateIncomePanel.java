@@ -11,6 +11,7 @@ import javax.swing.JTextField;
 
 import com.sys.applet.ConstService;
 import com.sys.applet.main.CommonPanel;
+import com.sys.applet.util.DateChooserJTextField;
 import com.sys.spring.account.domain.Income;
 import com.sys.spring.account.domain.Kind;
 
@@ -23,7 +24,7 @@ public class UpdateIncomePanel extends CommonPanel {
 	JTextField titleText = new JTextField();
     JTextField moneyText = new JTextField();
     JComboBox kindBox = new JComboBox();
-    JTextField timeText = new JTextField();
+    JTextField timeText = new DateChooserJTextField();
     private List<Kind> kindList ;
     
     int id ;

@@ -16,7 +16,7 @@ public class TableFactory {
         JTable table = new JTable(tableModel) ;
 //        table.setModel(tableModel);					// 生成自己的数据模型
         table.setToolTipText("Display Query Result"); // 设置帮助提示
-        table.setAutoResizeMode(table.AUTO_RESIZE_ALL_COLUMNS); // 设置表格调整尺寸模式
+        table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS); // 设置表格调整尺寸模式
         table.setCellSelectionEnabled(false); // 设置单元格选择方式
         table.setShowHorizontalLines(true); // 设置是否显示单元格之间的分割线
         table.setShowVerticalLines(true);

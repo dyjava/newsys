@@ -61,12 +61,12 @@ public class MainFrame extends JFrame{
         this.setTitle("个人记账系统--"+ConstService.user.getName());
         
 //        按钮设置
-    	acc_button.setBackground(SystemColor.activeCaptionText);
+    	acc_button.setBackground(Color.white);
     	acc_button.setForeground(Color.blue);
     	acc_button.setText("花销");
     	acc_button.addMouseListener(new AccountMouseAdapter());
     	
-    	in_button.setBackground(SystemColor.activeCaptionText);
+    	in_button.setBackground(Color.white);
     	in_button.setForeground(Color.blue);
     	in_button.setText("收入");
     	in_button.addMouseListener(new IncomeMouseAdapter());

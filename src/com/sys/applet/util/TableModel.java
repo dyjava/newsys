@@ -37,8 +37,7 @@ public class TableModel extends AbstractTableModel{
     public String getColumnName(int col) { // 取得表格列名
         return (String) title.get(col) ;
     }
-    @SuppressWarnings("unchecked")
-	public Class getColumnClass(int c) { // 取得列所属对象类
+	public Class<? extends Object> getColumnClass(int c) { // 取得列所属对象类
         return getValueAt(0, c).getClass();
     }
     public boolean isCellEditable(int row, int column) { // 设置单元格不可编辑，为缺省实现
