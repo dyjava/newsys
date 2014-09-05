@@ -1,6 +1,5 @@
 package com.sys.applet.util.jfreechart;
 
-import java.io.IOException;
 import java.util.List;
 
 import org.jfree.chart.JFreeChart;

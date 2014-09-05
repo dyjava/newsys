@@ -208,10 +208,10 @@ public class DateChooserJButton extends JButton {
         // 控制条配色------------------//
         Color controlLineColor = Color.pink; // 控制条底色
         Color controlTextColor = Color.white; // 控制条标签文字色
-        Color rbFontColor = Color.white; // RoundBox文字色
-        Color rbBorderColor = Color.red; // RoundBox边框色
-        Color rbButtonColor = Color.pink; // RoundBox按钮色
-        Color rbBtFontColor = Color.red; // RoundBox按钮文字色
+//        Color rbFontColor = Color.white; // RoundBox文字色
+//        Color rbBorderColor = Color.red; // RoundBox边框色
+//        Color rbButtonColor = Color.pink; // RoundBox按钮色
+//        Color rbBtFontColor = Color.red; // RoundBox按钮文字色
         /** 点击DateChooserButton时弹出的对话框，日历内容在这个对话框内 */
         JDialog dialog;
         JSpinner yearSpin;

@@ -67,6 +67,7 @@ public class BarChartDemo extends Demo {
 	 * @param dataset
 	 * @return
 	 */
+	@SuppressWarnings("deprecation")
 	private JFreeChart createChart(Dataset dataset){
 		JFreeChart chart = ChartFactory.createBarChart3D(
 							title, // 图表标题
