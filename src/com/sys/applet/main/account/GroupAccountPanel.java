@@ -52,9 +52,9 @@ public class GroupAccountPanel extends CommonPanel{
         kindBox.setMaximumRowCount(10);
         
         String beginDate = new SimpleDateFormat("yyyy-").format(new Date()) +"01-01" ;
-        beginTimeText.setText(beginDate) ;
+        beginTimeText = new DateChooserJTextField(beginDate);
         String endDate = new SimpleDateFormat("yyyy-MM-dd").format(new Date()) ;
-        endTimeText.setText(endDate) ;
+        endTimeText= new DateChooserJTextField(endDate);
         typeBox.addItem("kind") ;
         typeBox.addItem("year") ;
         typeBox.addItem("month") ;
@@ -96,8 +96,8 @@ public class GroupAccountPanel extends CommonPanel{
         super.printSearchTableModel() ;
         
 //      初始化表数据
-//        data = getData(beginDate,endDate, new Account(),"kind") ;
-//        TableFactory.freshTableData(table, data) ;
+        data = getData(beginDate,endDate, new Account(),"kind") ;
+        TableFactory.freshTableData(table, data) ;
     }
 
     private void submitAction(ActionEvent e) {//查询 显示
@@ -131,16 +131,27 @@ public class GroupAccountPanel extends CommonPanel{
     	List<List<Object>> data = new ArrayList<List<Object>>() ;
     	
     	List<AccountTable> accList = ConstService.accService.findAccountTableList(begin, end, account,type) ;
-        if(accList!=null)
-        for(int i=0;i<accList.size();i++){
-        	List<Object> l = new ArrayList<Object>() ;
-        	AccountTable acc = accList.get(i) ;
-        	l.add(acc.getCountNum()) ;
-        	l.add(DoubleUtil.money(acc.getMoney())) ;
-        	l.add(acc.getType()) ;
-        	l.add(acc.getOther()) ;
-        	data.add(l) ;
+        int count=0;
+        double allMoney=0.0 ;
+    	if(accList!=null){
+	        for(int i=0;i<accList.size();i++){
+	        	List<Object> l = new ArrayList<Object>() ;
+	        	AccountTable acc = accList.get(i) ;
+	        	l.add(acc.getCountNum()) ;
+	        	l.add(DoubleUtil.money(acc.getMoney())) ;
+	        	l.add(acc.getType()) ;
+	        	l.add(acc.getOther()) ;
+	        	data.add(l) ;
+	        	count++;
+	        	allMoney+=acc.getMoney() ;
+	        }
         }
+        List<Object> l = new ArrayList<Object>() ;
+        l.add("总计") ;
+        l.add(count+"笔") ;
+        l.add(DoubleUtil.money(allMoney)) ;
+        l.add("") ;
+        data.add(l) ;
         return data ;
     }
 

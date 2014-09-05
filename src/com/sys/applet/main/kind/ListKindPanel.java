@@ -51,8 +51,8 @@ public class ListKindPanel extends CommonPanel{
        
     	List<String> title = new ArrayList<String>() ;
     	title.add("ID") ;
-    	title.add("TITLE") ;
-    	title.add("NOTE") ;
+    	title.add("标题") ;
+    	title.add("介绍") ;
     	title.add("上级ID") ;
     	title.add("删除") ;
         table = TableFactory.createtable(title, data) ;

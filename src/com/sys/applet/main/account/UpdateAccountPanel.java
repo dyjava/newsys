@@ -45,7 +45,7 @@ public class UpdateAccountPanel extends CommonPanel{
         kindList = ConstService.kindService.findOutKindList() ;
         for(Kind k:kindList){
         	kindBox.addItem(k.getTitle()) ;
-        	if(k.getUid().equals(acc.getKindid())){
+        	if(k.getId()==acc.getKid()){
         		kindBox.setSelectedItem(k.getTitle()) ;
         	}
         }

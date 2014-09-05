@@ -46,9 +46,9 @@ public class ListAccountPanel extends CommonPanel{
         	kindBox.addItem(k.getTitle()) ;
         }
         String beginDate = new SimpleDateFormat("yyyy-MM-").format(new Date()) +"01" ;
-        beginTimeText.setText(beginDate) ;
+        beginTimeText = new DateChooserJTextField(beginDate);
         String endDate = new SimpleDateFormat("yyyy-MM-dd").format(new Date()) ;
-        endTimeText.setText(endDate) ;
+//        endTimeText.setText(endDate) ;
 
 //    	button
         JButton submitButton = new JButton();

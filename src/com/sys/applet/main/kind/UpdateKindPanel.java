@@ -31,7 +31,7 @@ public class UpdateKindPanel extends CommonPanel{
     	titleText.setText(kind.getTitle()) ;
     	noteText.setText(kind.getNote()) ;
     	
-    	labList.add(new JLabel("ID："+kind.getUid())) ;
+    	labList.add(new JLabel("ID："+kind.getId())) ;
     	labList.add(new JLabel("标题：")) ;
     	labList.add(new JLabel("简介：")) ;
     	
