@@ -48,8 +48,6 @@ public class GroupAccountPanel extends CommonPanel{
         for(Kind k:kindList){
         	kindBox.addItem(k.getTitle()) ;
         }
-        kindBox.setRenderer(new ACellRenderer());
-        kindBox.setMaximumRowCount(10);
         
         String beginDate = new SimpleDateFormat("yyyy-").format(new Date()) +"01-01" ;
         beginTimeText = new DateChooserJTextField(beginDate);
